@@ -1,0 +1,1 @@
+export const POST_BASE_URL = 'https://gitee.com/wjhuang88/hwj-zone-articles/raw/master'

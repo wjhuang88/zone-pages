@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@styles": [
+        "src/styles"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@request": [
+        "src/request"
+      ],
+      "@request/*": [
+        "src/request/*"
+      ],
+      "@pages": [
+        "src/pages"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@config": [
+        "src/common-config"
+      ],
+    },
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
