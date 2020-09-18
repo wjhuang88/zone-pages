@@ -15,6 +15,7 @@ export default function Home({ posts }) {
         <h1 className={styles.title}>
           站点玩命建设中。。。
         </h1>
+        <br />
         {posts.map(post => <Link key={`post-${post.path}`} href="/posts/[path]" as={`/posts/${post.path}`}><a>{post.title}</a></Link>)}
       </main>
     </div>
