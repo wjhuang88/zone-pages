@@ -27,8 +27,8 @@ pipeline {
             agent any
             steps {
                 script {
-                    def myImage = docker.build('lindenz-dev/lindenz-index:${CI_BUILD_NUMBER}')
-                    docker.withRegistry('https://ccr.ccs.tencentyun.com', '2b95bae2-443c-49d4-bb86-2ce448f89845') {
+                    def myImage = docker.build('hwj-zone/lindenz-index:${CI_BUILD_NUMBER}')
+                    docker.withRegistry('https://ccr.ccs.tencentyun.com', '7ed95a1d-0702-4321-a8db-f238a9c01ec0') {
                         myImage.push(env.CI_BUILD_NUMBER)
                     }
                 }
