@@ -9,8 +9,8 @@ export default function Home({ posts }) {
       <Head>
         <title>黄炜杰的博客 | Gerald Huang's blog</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href='http://cdn.repository.webfont.com/webfonts/nomal/140999/29782/5f6a0639f629d80cc02be8c2.css' rel='stylesheet' type='text/css' />
-        <link href='http://cdn.repository.webfont.com/webfonts/nomal/140999/47082/5f6a0561f629d80cc02be8be.css' rel='stylesheet' type='text/css' />
+        <link href='https://cdn.repository.webfont.com/webfonts/nomal/140999/29782/5f6a0639f629d80cc02be8c2.css' rel='stylesheet' type='text/css' />
+        <link href='https://cdn.repository.webfont.com/webfonts/nomal/140999/47082/5f6a0561f629d80cc02be8be.css' rel='stylesheet' type='text/css' />
       </Head>
       <header className={styles.header}>
         <div>
@@ -29,7 +29,9 @@ export default function Home({ posts }) {
         </nav>
       </header>
       <main className={styles.main}>
-        {posts.map(post => <Link key={`post-${post.path}`} href="/posts/[path]" as={`/posts/${post.path}`}><a>{post.title}</a></Link>)}
+        {posts.map(post => (
+          <Link key={`post-${post.path}`} href="/posts/[path]" as={`/posts/${post.path}`}><a>{post.title}</a></Link>
+        ))}
       </main>
     </div>
   )
