@@ -1,0 +1,27 @@
+.postList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.postItem {
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px 2px 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.title {
+  margin: -7px 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.title:visited {
+  color: #969696;
+}
+
+.title:hover {
+  text-decoration: underline;
+}

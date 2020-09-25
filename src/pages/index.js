@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { LogoBlock, NavBlock } from '@components'
+import { LogoBlock, NavBlock, PostList } from '@components'
 import styles from '@styles/Home.module.css'
 import { getPostList } from '@request'
 
@@ -21,9 +20,7 @@ export default function Home({ posts }) {
         </nav>
       </header>
       <main className={styles.main}>
-        {posts.map(post => (
-          <Link key={`post-${post.path}`} href="/posts/[path]" as={`/posts/${post.path}`}><a>{post.title}</a></Link>
-        ))}
+        <PostList posts={posts} />
       </main>
     </div>
   )
