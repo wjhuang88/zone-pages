@@ -8,7 +8,7 @@ export default function PostListItem({ path, title, des }) {
       <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`}>
         <a className={styles.title}>{title}</a>
       </Link>
-      <div>{des}</div>
+      <div className={styles.des}>{des}</div>
     </li>
   )
 }
