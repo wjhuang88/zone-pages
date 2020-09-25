@@ -1,25 +1,30 @@
 .title {
   margin: 0;
-  width: 140px;
+  width: 145px;
+  height: 20px;
   font-size: 24px;
   font-family:'Bigruixian235b4e4b36226c7';
   color: #e67e22;
   text-align: center;
+  user-select: none;
 }
 
 .titletail {
   margin: 0 0 0 4px;
   font-size: 20px;
   color:#bdc3c7;
+  user-select: none;
 }
 
 .subtitle {
   padding-top: 4px;
   margin-top: 4px;
-  width: 140px;
+  width: 145px;
+  height: 25px;
   font-size: 18px;
   font-family:'Bauhaus-Bold';
   color: #bdc3c7;
   text-align: center;
   border-top: 1px solid #2c3e50;
+  user-select: none;
 }

@@ -16,9 +16,6 @@
       "@components": [
         "src/components"
       ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
       "@request": [
         "src/request"
       ],
