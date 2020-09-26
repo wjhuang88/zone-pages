@@ -1,5 +1,4 @@
-import LogoBlock from './logo-block'
-import NavBlock from './nav-block'
+import PageHeader from './header'
 import PostList from './post-list'
 
-export { LogoBlock, NavBlock, PostList }
+export { PageHeader, PostList }

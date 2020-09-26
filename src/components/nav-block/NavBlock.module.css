@@ -34,3 +34,11 @@
 .navBlock:hover .navSubtitle {
   border-color: #e67e22;
 }
+
+.selectedBlockBorder {
+  border-color: #f39c12;
+}
+
+.selectedBlockText {
+  color: #f39c12;
+}

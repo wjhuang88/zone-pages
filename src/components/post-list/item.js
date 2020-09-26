@@ -19,7 +19,7 @@ export default function PostListItem({ path, title, date, des, img }) {
         </Link>
         <p className={styles.des}>{des}</p>
         <div className={styles.footer}>
-          于 {date.format('YYYY-MM-DD HH:mm')}
+          <span className={styles.time}>发表于 {date.format('YYYY-MM-DD HH:mm')}</span>
           <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
           <EyeIcon style={{ marginLeft: 15 }} value="99,999" />
           <HeartIcon style={{ marginLeft: 15 }} value="999" />

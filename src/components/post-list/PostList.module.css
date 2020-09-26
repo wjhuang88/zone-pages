@@ -90,6 +90,10 @@
   margin: 0 0 0 20px;
 }
 
+.time {
+  font-style: italic;
+}
+
 .title {
   margin: -7px 0 4px;
   color: #34495e;
