@@ -21,6 +21,7 @@ export default function Home({ posts }) {
       </header>
       <main className={styles.main}>
         <PostList posts={posts} />
+        <div className={styles.aside}></div>
       </main>
     </div>
   )

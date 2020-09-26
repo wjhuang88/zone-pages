@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { FireIcon } from './icons'
+import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from './icons'
 import styles from './PostList.module.css'
 
 export default function PostListItem({ path, title, date, des, img }) {
@@ -19,8 +19,11 @@ export default function PostListItem({ path, title, date, des, img }) {
         </Link>
         <p className={styles.des}>{des}</p>
         <div className={styles.footer}>
-          于 {date.format('YYYY-MM-DD')}
-          <FireIcon style={{ marginLeft: 15 }} value="99,999" />
+          于 {date.format('YYYY-MM-DD HH:mm')}
+          <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
+          <EyeIcon style={{ marginLeft: 15 }} value="99,999" />
+          <HeartIcon style={{ marginLeft: 15 }} value="999" />
+          <MessageIcon style={{ marginLeft: 15 }} value="999" />
         </div>
       </div>
     </li>
