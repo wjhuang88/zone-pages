@@ -4,39 +4,19 @@
     "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@styles": [
-        "src/styles"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@components": [
-        "src/components"
-      ],
-      "@request": [
-        "src/request"
-      ],
-      "@pages": [
-        "src/pages"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@config": [
-        "src/common-config"
-      ],
+      "@/*": ["src/*"],
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"],
+      "@components": ["src/components"],
+      "@request": ["src/request"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
+      "@config": ["src/common-config"],
     },
     "target": "ES6",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "node_modules/**/*"]
 }

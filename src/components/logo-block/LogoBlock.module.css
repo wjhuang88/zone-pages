@@ -1,3 +1,14 @@
+@import 'https://cdn.repository.webfont.com/webfonts/nomal/140999/47082/5f6a0561f629d80cc02be8be.css';
+@import 'https://cdn.repository.webfont.com/webfonts/nomal/140999/29782/5f6a0639f629d80cc02be8c2.css';
+
+.container {
+  display: block;
+}
+
+.container:hover {
+  animation: shake 2s;
+}
+
 .title {
   margin: 0;
   width: 145px;
@@ -27,4 +38,34 @@
   text-align: center;
   border-top: 1px solid #2c3e50;
   user-select: none;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 0;
+  }
+  5% {
+    transform: rotate(.25deg);
+  }
+  10%,
+  20%,
+  30% {
+    transform: rotate(-.5deg);
+  }
+  15%,
+  25%,
+  35% {
+    transform: rotate(.5deg);
+  }
+  40% {
+    transform: rotate(-.25deg);
+  }
+  45% {
+    transform: rotate(.25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
 }

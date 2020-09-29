@@ -1,0 +1,114 @@
+.list {
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 0;
+  list-style: none;
+  border-top: 1px solid #f0f0f0;
+}
+
+.list>li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link {
+  margin: 0 0 0 8px;
+  line-height: 1.2;
+  border-bottom: 1px solid #fff;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: #7f8c8d;
+  border-color: #7f8c8d;
+}
+
+.aside {
+  margin: 40px 0 0 40px;
+  width: 300px;
+  flex: 0 0 auto;
+}
+
+.asidePanel {
+  margin: 20px 0 0;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #34495e;
+  transition: border-color 0.2s;
+}
+
+.asidePanel:hover {
+  border-color: #d0d0d0;
+}
+
+.motto {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  background: #fff url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
+  font-size: 14px;
+  color: #34495e;
+}
+
+.motto>p,.motto>h2,.asidePanel>h2 {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.motto>h2,.asidePanel>h2 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  padding: 0 0 0 5px;
+  border-left: 5px solid #bdc3c7;
+}
+
+.asidePanel>h2 {
+  font-size: 14px;
+  color: #bdc3c7;
+  transition: color 0.2s;
+}
+
+.asidePanel:hover>h2 {
+  color: #95a5a6;
+}
+
+.motto::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  bottom: 20px;
+  width: 90%;
+  height: 20%;
+  z-index: -1;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+  transform: rotate(3deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.motto:hover::after {
+  opacity: 1;
+}
+
+.motto::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: 22px;
+  width: 90%;
+  height: 20%;
+  z-index: -1;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.motto:hover::before {
+  opacity: 1;
+}

@@ -1,0 +1,42 @@
+.article {
+  margin-top: 40px;
+}
+
+.article img {
+  max-width: 600px;
+}
+
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+  color: #404040;
+  text-rendering: optimizelegibility;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.article h1 {
+  font-size: 30px;
+}
+
+.article h2 {
+  font-size: 24px;
+}
+
+.article p {
+  line-height: 1.8;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 0 20px;
+  word-break: break-word;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #bdc3c7;
+  margin: 0 0 32px;
+}
