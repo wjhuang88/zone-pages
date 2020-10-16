@@ -1,5 +1,8 @@
 pipeline {
     agent none
+    environment {
+        SERVER_BASE_URL = 'http://hwj-zone-server.sport-prod.svc.cluster.local'
+    }
     stages {
         stage('Checkout') {
             agent any
