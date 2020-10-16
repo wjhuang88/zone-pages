@@ -1,1 +1,2 @@
-export const POST_BASE_URL = 'https://gitee.com/wjhuang88/hwj-zone-articles/raw/master'
+console.log("server base: https://source.hwj.zone")
+export const POST_BASE_URL = 'https://source.hwj.zone'

@@ -7,15 +7,15 @@ let postListCache
 
 export async function getPostList() {
     if (!postListCache) {
-        const res = await fetch(`${POST_BASE_URL}/list.json`)
+        const res = await fetch(`${POST_BASE_URL}/posts`)
         postListCache = res.json().catch(() => null)
     }
 
     return postListCache
 }
 
-export async function getPost(path) {
-    const res = await fetch(`${POST_BASE_URL}/${path}.md`)
+export async function getPost(id) {
+    const res = await fetch(`${POST_BASE_URL}/posts/${id}`)
     const data = await res.text()
     const matterResult = matter(data)
 
