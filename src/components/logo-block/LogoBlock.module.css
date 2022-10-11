@@ -2,10 +2,7 @@
   display: block;
   border-left: 4px solid #ddd;
   padding: 0 10px;
-}
-
-.container:hover {
-  animation: shake 1.2s;
+  animation: init 1.2s;
 }
 
 .title {
@@ -16,6 +13,7 @@
   color: #e67e22;
   text-align: left;
   user-select: none;
+  animation: init-title 1.2s;
 }
 
 .titletail {
@@ -37,34 +35,49 @@
   text-align: right;
   border-top: 1px solid #2c3e50;
   user-select: none;
+  animation: init-subtitle 1.2s;
 }
 
-@keyframes shake {
-  0%,
+@keyframes init {
+  0% {
+    border-color: #fff;
+  }
+
+  60% {
+    border-color: #fff;
+  }
+
   100% {
-    transform: rotate(0deg);
-    transform-origin: 30% 150%;
+    border-color: #ddd;
   }
-  5% {
-    transform: rotate(.25deg);
+}
+
+@keyframes init-title {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  10%,
-  20%,
-  30% {
-    transform: rotate(-.5deg);
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  15%,
-  25%,
-  35% {
-    transform: rotate(.5deg);
+}
+
+@keyframes init-subtitle {
+  0% {
+    opacity: 0;
+    border-color: #fff;
+    transform: translateX(-200px);
   }
-  40% {
-    transform: rotate(-.25deg);
+
+  70% {
+    border-color: #fff;
   }
-  45% {
-    transform: rotate(.25deg);
-  }
-  50% {
-    transform: rotate(0deg);
+
+  100% {
+    opacity: 1;
+    border-color: #2c3e50;
+    transform: translateX(0);
   }
 }

@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import Head from 'next/head'
-import { PageHeader, Aside } from '@components'
+import { Aside } from '@components'
 import { TagIcon } from '@components'
 import { getPostList, getPost } from '@request'
 import { readHtmlFromMd } from '@/tools/files'
@@ -14,7 +14,6 @@ export default function Post({ postData, posts }) {
       <Head>
         <title key={'title'}>{postData.title} | Gerald's blog</title>
       </Head>
-      <PageHeader />
       <main className="main">
         <div className={styles.article}>
           <h1 className={styles.title}>{postData.title}</h1>

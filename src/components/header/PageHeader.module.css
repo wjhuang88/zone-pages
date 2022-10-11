@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: space-between;
   height: 56px;
+  width: 1024px;
+  margin: 24px auto 0 auto;
 }
 
 .nav {

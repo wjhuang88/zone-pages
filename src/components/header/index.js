@@ -15,7 +15,7 @@ export default function PageHeader({ selectedHref }) {
 
   return (
     <header className={styles.header}>
-      <LogoBlock />
+      <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
         {navList.map(item =>
           <NavBlock key={item.id} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
