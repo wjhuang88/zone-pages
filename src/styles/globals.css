@@ -5,15 +5,6 @@ body {
   min-height: 900px;
   font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 }
-@media screen and (min-width: 1250px) {
-body {
-  background-color: #fff;
-  background-image: url('/assets/windbell.png'), url('/assets/maple.png'), url('/assets/cat.png');
-  background-size: 120px, 120px, 120px;
-  background-position: top right, bottom left, bottom 8px right 10px;
-  background-repeat: no-repeat;
-}
-}
 
 a {
   color: inherit;

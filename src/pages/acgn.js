@@ -1,13 +1,13 @@
-import { PageHeader, PostList, Aside } from '@components'
+import { PageHeader, Aside } from '@components'
 import { getPostList } from '@request'
 
-export default function Home({ posts }) {
+export default function About({ posts }) {
 
   return (
     <div className="container">
-      <PageHeader selectedHref="/" />
+      <PageHeader selectedHref="/acgn" />
       <main className="main">
-        <PostList posts={posts} />
+        <div style={{margin: 'auto'}}>敬请期待</div>
         <Aside recommendPosts={posts} latestPosts={posts} />
       </main>
     </div>

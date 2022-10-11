@@ -26,7 +26,7 @@ export default function Aside({ recommendPosts, latestPosts }) {
     <div className={styles.aside}>
       <div className={styles.motto}>
         <h2>铭</h2>
-        <p>当你觉得自己对一件事情确信无疑时，你要么是真的洞悉这件事的全部真相，要么是因为你对它一无所知。</p>
+        <p>人活着是没有意义的，但是，活下去的话说不定会找到有趣的事。</p>
       </div>
       <div className={styles.asidePanel}>
         <h2>推荐</h2>

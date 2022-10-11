@@ -1,0 +1,51 @@
+@media screen and (min-width: 1250px) {
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 120px;
+  height: 225px;
+  background: #fff url('/assets/windbell.png') no-repeat 0/120px;
+  transform-origin: 50% 0;
+  animation: tail-swing 10s infinite;
+}
+.tail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: #fff url('/assets/windbell.png') no-repeat 0 -85px/120px;
+  transform-origin: 50% 0;
+  animation: tail-swing 6s infinite;
+}
+
+@keyframes main-swing {
+
+  0% {
+    transform: rotate(6deg);
+  }
+
+  50% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes tail-swing {
+
+  0% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+}

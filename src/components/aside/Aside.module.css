@@ -15,6 +15,7 @@
 .link {
   margin: 0 0 0 8px;
   line-height: 1.2;
+  font-weight: 300;
   border-bottom: 1px solid #fff;
   transition: all 0.2s;
 }
@@ -59,6 +60,10 @@
   margin: 0;
   font-weight: normal;
   word-break: break-word;
+}
+
+.motto>p {
+  font-weight: 300;
 }
 
 .motto>h2,.asidePanel>h2 {

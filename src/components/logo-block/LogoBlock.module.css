@@ -1,41 +1,40 @@
-@import 'https://cdn.repository.webfont.com/webfonts/nomal/140999/47082/5f6a0561f629d80cc02be8be.css';
-@import 'https://cdn.repository.webfont.com/webfonts/nomal/140999/29782/5f6a0639f629d80cc02be8c2.css';
-
 .container {
   display: block;
+  border-left: 4px solid #ddd;
+  padding: 0 10px;
 }
 
 .container:hover {
-  animation: shake 2s;
+  animation: shake 1.2s;
 }
 
 .title {
   margin: 0;
-  width: 145px;
-  height: 20px;
-  font-size: 24px;
-  font-family:'Bigruixian235b4e4b36226c7';
+  width: 220px;
+  font-size: 22px;
+  font-weight: 300;
   color: #e67e22;
-  text-align: center;
+  text-align: left;
   user-select: none;
 }
 
 .titletail {
-  margin: 0 0 0 4px;
-  font-size: 20px;
+  margin: 0 0 0 2px;
+  font-size: 16px;
+  font-weight: 300;
   color:#bdc3c7;
   user-select: none;
 }
 
 .subtitle {
   padding-top: 4px;
-  margin-top: 4px;
-  width: 145px;
+  width: 220px;
   height: 25px;
-  font-size: 18px;
-  font-family:'Bauhaus-Bold';
+  font-style: italic;
+  font-weight: 100;
+  font-size: 14px;
   color: #bdc3c7;
-  text-align: center;
+  text-align: right;
   border-top: 1px solid #2c3e50;
   user-select: none;
 }
@@ -44,7 +43,7 @@
   0%,
   100% {
     transform: rotate(0deg);
-    transform-origin: 50% 0;
+    transform-origin: 30% 150%;
   }
   5% {
     transform: rotate(.25deg);

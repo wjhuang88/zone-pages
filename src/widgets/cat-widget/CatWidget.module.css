@@ -1,0 +1,11 @@
+@media screen and (min-width: 1250px) {
+  .container {
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    display: block;
+    width: 110px;
+    height: 120px;
+    background: #fff url('/assets/cat.png') no-repeat 0/120px;
+  }
+}
