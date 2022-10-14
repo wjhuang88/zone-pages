@@ -7,10 +7,10 @@ import { readHtmlFromMd } from '@/tools/files'
 
 import styles from './Post.module.css'
 
-export default function Post({ postData, posts }) {
+export default function Post({ postData }) {
 
   return (
-    <div className="container">
+    <>
       <Head>
         <title key={'title'}>{postData.title} | Gerald's blog</title>
       </Head>
@@ -25,14 +25,12 @@ export default function Post({ postData, posts }) {
           </div>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </div>
-        <Aside recommendPosts={posts} latestPosts={posts} />
       </main>
-    </div>
+    </>
   );
 }
 
 export async function getServerSideProps({ params }) {
-  const posts = await getPostList()
   const postHtml = await readHtmlFromMd('/Users/GHuang/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/随笔/樱花雪.txt')
   const postData = {
     id: 123,
@@ -47,5 +45,5 @@ export async function getServerSideProps({ params }) {
     create_time: 1663926534913,
     update_time: 1663926534913
   }
-  return { props: { postData, posts } }
+  return { props: { postData } }
 }

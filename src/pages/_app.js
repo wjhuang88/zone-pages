@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { PageHeader } from '@components'
+import { PageHeader, Aside } from '@components'
 import WindbellWidget from '@widgets/windbell-widget'
 import CatWidget from '@widgets/cat-widget'
 
@@ -16,10 +16,18 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
     </Head>
     <PageHeader selectedHref={router.pathname} />
-    <Component {...pageProps} />
+    <div className='page-wrap'>
+      <Component {...pageProps} />
+      <Aside recommendPosts={pageProps.posts} latestPosts={pageProps.posts} />
+    </div>
     <WindbellWidget />
     <CatWidget />
   </>
 }
 
 export default MyApp
+
+export async function getServerSideProps({ params }) {
+  const posts = await getPostList()
+  return { props: { posts } }
+}

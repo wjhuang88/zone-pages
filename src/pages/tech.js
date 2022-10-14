@@ -4,12 +4,9 @@ import { getPostList } from '@request'
 export default function About({ posts }) {
 
   return (
-    <div className="container">
-      <main className="main">
-        <div style={{margin: 'auto'}}>敬请期待</div>
-        <Aside recommendPosts={posts} latestPosts={posts} />
-      </main>
-    </div>
+    <main className="main">
+      <div style={{ margin: '150px auto' }}>敬请期待</div>
+    </main>
   )
 }
 

@@ -19,12 +19,17 @@ a:active, a:hover, a:focus {
   box-sizing: border-box;
 }
 
-.container {
+.page-wrap {
   width: 1024px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .main {
+  width: 684px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

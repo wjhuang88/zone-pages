@@ -4,12 +4,9 @@ import { getPostList } from '@request'
 export default function Home({ posts }) {
 
   return (
-    <div className="container">
-      <main className="main">
-        <PostList posts={posts} />
-        <Aside recommendPosts={posts} latestPosts={posts} />
-      </main>
-    </div>
+    <main className="main">
+      <PostList posts={posts} />
+    </main>
   )
 }
 
