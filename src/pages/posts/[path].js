@@ -12,7 +12,7 @@ export default function Post({ postData }) {
   return (
     <>
       <Head>
-        <title key={'title'}>{postData.title} | Gerald's blog</title>
+        <title key="title">{postData.title} | Gerald's blog</title>
       </Head>
       <main className="main">
         <div className={styles.article}>

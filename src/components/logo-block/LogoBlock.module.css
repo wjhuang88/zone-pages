@@ -15,7 +15,7 @@
   user-select: none;
   background: #fff url('/assets/title-cat.webp') no-repeat;
   background-size: 100px;
-  background-position: 140px 10px;
+  background-position: 160px 0;
   transition: background-position .3s cubic-bezier(0.68,-0.6,0.32,1.6);
   animation: init-title 1.2s;
 }

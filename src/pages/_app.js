@@ -12,8 +12,7 @@ function MyApp({ Component, pageProps }) {
 
   return <>
     <Head>
-        <title key={'title'}>黄炜杰的博客 | Gerald's blog</title>
-        <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
     <PageHeader selectedHref={router.pathname} />
     <div className='page-wrap'>
@@ -26,8 +25,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-
-export async function getServerSideProps({ params }) {
-  const posts = await getPostList()
-  return { props: { posts } }
-}
