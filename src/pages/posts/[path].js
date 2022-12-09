@@ -31,6 +31,7 @@ export default function Post({ postData }) {
 }
 
 export async function getServerSideProps({ params }) {
+  const posts = await getPostList()
   const postHtml = await readHtmlFromMd('/Users/GHuang/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/随笔/樱花雪.txt')
   const postData = {
     id: 123,
@@ -45,5 +46,5 @@ export async function getServerSideProps({ params }) {
     create_time: 1663926534913,
     update_time: 1663926534913
   }
-  return { props: { postData } }
+  return { props: { postData, posts } }
 }
