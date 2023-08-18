@@ -1,8 +1,9 @@
 import { readHtmlFromRemoteMd } from '@/apis'
+import { CONTENT_BASE } from '@config'
 import Post from './post'
 
 export default async function Page({ params }) {
-  const postHtml = await readHtmlFromRemoteMd('https://raw.githubusercontent.com/wjhuang88/zone-articles/master/demo/hello-2-world.md')
+  const postHtml = await readHtmlFromRemoteMd(`${CONTENT_BASE}/demo/hello-2-world.md`)
   const postData = {
     id: params.path,
     title: 'test',
