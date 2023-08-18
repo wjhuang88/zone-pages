@@ -8,14 +8,12 @@ export default function PostListItem({ path, title, date, des, img }) {
 
   return (
     <li className={styles.postItem}>
-      <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`}>
-        <a className={styles.postImage}>
-          <div style={{ backgroundImage: `url(${image})` }} />
-        </a>
+      <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`} className={styles.postImage}>
+        <div style={{ backgroundImage: `url(${image})` }} />
       </Link>
       <div className={styles.postBlock}>
-        <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`}>
-          <a className={styles.title}>{title}</a>
+        <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`} className={styles.title}>
+          {title}
         </Link>
         <p className={styles.des}>{des}</p>
         <div className={styles.footer}>

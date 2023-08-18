@@ -7,8 +7,8 @@ export default function AsideList({ posts }) {
       {posts?.map((item, index) => (
         <li style={{marginTop: index !== 0 ? 8 : 0}} key={index}>
           <img src="/assets/icons/article.svg" />
-          <Link href="/posts/[path]" as={`/posts/${item.id}`}>
-            <a className={styles.link}>{item.title}</a>
+          <Link href="/posts/[path]" as={`/posts/${item.id}`} className={styles.link}>
+            {item.title}
           </Link>
         </li>
       ))}

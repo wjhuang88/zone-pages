@@ -1,9 +1,14 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import LogoBlock from '../logo-block'
 import NavBlock from '../nav-block'
 
 import styles from './PageHeader.module.css'
 
-export default function PageHeader({ selectedHref }) {
+export default function PageHeader() {
+
+  const selectedHref = usePathname()
 
   const navList = [
     { id: 0, title: '首页', subtitle: 'HOME', href: '/'},

@@ -1,3 +1,5 @@
+'use client'
+
 import AsideList from './aside-list'
 import TagCloud from 'react-tag-cloud'
 import randomColor from 'randomcolor'

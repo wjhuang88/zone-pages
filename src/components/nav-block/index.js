@@ -6,11 +6,9 @@ export default function NavBlock({ title, subtitle, href, selected }) {
   const titleClass = selected ? `${styles.navTitle} ${styles.selectedBlockText}` : styles.navTitle
   const subtitleClass = selected ? `${styles.navSubtitle} ${styles.selectedBlockBorder}` : styles.navSubtitle
   return (
-    <Link href={href}>
-      <a className={blockClass}>
-        <div className={titleClass}>{title}</div>
-        <div className={subtitleClass}>{subtitle}</div>
-      </a>
+    <Link href={href} className={blockClass}>
+      <div className={titleClass}>{title}</div>
+      <div className={subtitleClass}>{subtitle}</div>
     </Link>
   )
 }
