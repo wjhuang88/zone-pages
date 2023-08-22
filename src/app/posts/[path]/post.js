@@ -1,6 +1,5 @@
 'use client'
 
-import dayjs from 'dayjs'
 import { TagIcon } from '@components'
 
 import styles from './Post.module.css'
@@ -11,7 +10,7 @@ export default async function Post({ postData }) {
       <div className={styles.article}>
         <h1 className={styles.title}>{postData.title}</h1>
         <div className={styles.subtitle}>
-          <span>更新于&nbsp;{dayjs(postData.update_time).format('YYYY-MM-DD HH:mm:ss')}</span>
+          <span>更新于&nbsp;{postData.update_time}</span>
           <span>字数&nbsp;{postData.contentHtml.length}</span>
           <span>阅读&nbsp;{postData.read_count}</span>
           <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />

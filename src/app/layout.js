@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  const posts = await getPostList()
+  const posts = (await getPostList()).slice(0, 5)
 
   return (
     <html lang="en">

@@ -1,4 +1,4 @@
-import { readHtmlFromMd, readHtmlFromRemoteMd } from "./articles"
+import { getPost, getMeta } from "./articles"
 import { getPostList } from "./list"
 
-export { readHtmlFromMd, readHtmlFromRemoteMd, getPostList }
+export { getPost, getMeta, getPostList }
