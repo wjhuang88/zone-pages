@@ -1,6 +1,7 @@
 .article {
   margin-top: 40px;
   width: 100%;
+  animation: init-post .4s;
 }
 
 .article img {
@@ -75,4 +76,14 @@
 
 .subtitle>span:not(:first-child) {
   margin: 0 0 0 15px;
+}
+
+@keyframes init-post {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
