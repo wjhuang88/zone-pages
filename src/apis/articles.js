@@ -40,7 +40,7 @@ export async function getPost(path) {
 
 export async function getMeta(path) {
   let catPath = path.split('_')[0]
-  const catListRes = await fetch(`${CONTENT_BASE}/${catPath}/meta.json`)
+  const catListRes = await fetch(`${CONTENT_BASE}/${catPath}/meta.json`, { cache: 'no-cache' })
   const catListJson = await catListRes.json()
   for (let post of catListJson) {
     if (post.path == `${path.replace(`${catPath}_`, '')}.md`) {
