@@ -1,5 +1,4 @@
 import PostListItem from './item'
-import moment from 'dayjs'
 import styles from './PostList.module.css'
 
 export default function PostList({ posts }) {

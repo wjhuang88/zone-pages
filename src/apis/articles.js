@@ -24,8 +24,8 @@ async function parseMd(source) {
   return String(file)
 }
 
-async function readHtmlFromRemoteMd(url) {
-  const response = await fetch(url)
+async function readHtmlFromRemoteMd(url, cacheTag) {
+  const response = await fetch(url, { next: { tags: [cacheTag] } })
   if (!response.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -33,9 +33,9 @@ async function readHtmlFromRemoteMd(url) {
   return await parseMd(md)
 }
 
-export async function getPost(path) {
+export async function getPost(path, update) {
   let realPath = path.replace('_', '/') + '.md'
-  return await readHtmlFromRemoteMd(`${CONTENT_BASE}/${realPath}`)
+  return await readHtmlFromRemoteMd(`${CONTENT_BASE}/${realPath}`, update)
 }
 
 export async function getMeta(path) {

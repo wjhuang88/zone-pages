@@ -2,7 +2,7 @@ import { getPost, getMeta } from '@/apis'
 import Post from './post'
 
 export default async function Page({ params }) {
-  const postHtml = await getPost(params.path)
+  const postHtml = await getPost(params.path, params.update)
   const postMeta = await getMeta(params.path)
   const postData = {
     ...postMeta,
