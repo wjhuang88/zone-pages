@@ -2,7 +2,7 @@
 
 import { PostList } from '@components'
 
-export default async function Home({ posts }) {
+export default function Home({ posts }) {
 
   return <>
     <main className="main">
