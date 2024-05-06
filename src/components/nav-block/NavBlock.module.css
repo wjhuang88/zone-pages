@@ -10,6 +10,7 @@
   border: 1px solid #f0f0f0;
   user-select: none;
   transition: border-color 0.2s;
+  animation: nav-in 0.5s;
 }
 
 .navBlock:hover {
@@ -48,4 +49,21 @@
 
 .selectedBlockText {
   color: #e67e22;
+}
+
+@keyframes nav-in {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

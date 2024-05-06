@@ -22,8 +22,8 @@ export default function PageHeader() {
     <header className={styles.header}>
       <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
-        {navList.map(item =>
-          <NavBlock key={item.id} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
+        {navList.map((item, index) =>
+          <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
         )}
       </nav>
     </header>

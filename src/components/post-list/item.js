@@ -10,7 +10,7 @@ export default function PostListItem({ meta, sort }) {
   const des = meta.bref
   const date = meta.create_time
 
-  const animDuration = Math.min((sort / 8) + 1, 2)
+  const animDuration = Math.min((sort / 8) + 0.6, 2)
 
   return (
     <li className={styles.postItem} style={{ animationDuration: animDuration + 's'}}>
