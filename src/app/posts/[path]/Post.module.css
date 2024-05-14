@@ -36,6 +36,19 @@
   word-break: break-word;
 }
 
+.article p code {
+  color: #2c3e509d;
+  background-color: #1b1f230d;
+  border: 0;
+  margin: 0;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 85%;
+  white-space: normal;
+  font-weight: normal;
+  vertical-align: text-top;
+}
+
 .article p:has(> img) {
   text-align: center;
 }
@@ -50,6 +63,10 @@
 .article blockquote > p {
   color: #959ba7;
   margin: 0;
+}
+
+.article blockquote > p > code {
+  color: #959ba79d;
 }
 
 .article ul {
@@ -96,12 +113,11 @@
 }
 
 .article a {
-  font-size: 14px;
+  font-size: 85%;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-top;
   line-height: 1.2;
-  padding: 0 2px 1px;
-  margin-bottom: 2px;
+  padding: 0 2px 0;
   transition: all .2s;
   border-bottom: 1px solid #2c3e50;
 }
