@@ -1,18 +1,42 @@
 'use client'
 
+import React, { useEffect, useState } from 'react'
+import { load } from 'jinrishici'
+
 import AsideList from './aside-list'
 
 import styles from './Aside.module.css'
 
-export default function Aside({ recommendPosts, latestPosts }) {
+export default React.memo(function Aside({ recommendPosts, latestPosts }) {
+
+  let shake
+
+  const laodMotto = () => {
+    if (shake) {
+      clearTimeout(shake)
+    }
+    shake = setTimeout(() => {
+      setLoading(true)
+      setMotto('')
+      load(result => {
+        setMotto(result.data.content)
+        setLoading(false)
+      })
+    }, 50)
+  }
 
   const baseDuration = 0.5
 
+  const [motto, setMotto] = useState('')
+  const [loading, setLoading] = useState(true)
+
+  // useEffect(laodMotto, [])
+
   return (
     <div className={styles.aside}>
-      <div className={styles.motto + ' ' + styles.anim} style={{ animationDuration: baseDuration + 's' }}>
-        <h2>铭</h2>
-        <p>人活着是没有意义的，但是，活下去的话说不定会找到有趣的事。</p>
+      <div onClick={laodMotto} className={styles.motto + ' ' + styles.anim} style={{ animationDuration: baseDuration + 's' }}>
+        <h2>每日诗词</h2>
+        <p className={loading ? styles.loading : ''}>{motto}</p>
       </div>
       <div>
         <div className={styles.asidePanel + ' ' + styles.anim} style={{ animationDuration: (baseDuration + 0.1) + 's' }}>
@@ -26,4 +50,4 @@ export default function Aside({ recommendPosts, latestPosts }) {
       </div>
     </div>
   )
-}
+})

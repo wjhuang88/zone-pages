@@ -10,14 +10,15 @@
   "dependencies": {
     "dayjs": "^1",
     "gray-matter": "^4.0.3",
+    "jinrishici": "^1.0.6",
     "next": "^14",
     "react": "^18",
     "react-dom": "^18",
-    "remark-rehype": "^11",
-    "remark-parse": "^11",
     "rehype-prism": "^2",
     "rehype-stringify": "^10",
     "remark-gfm": "^4",
+    "remark-parse": "^11",
+    "remark-rehype": "^11",
     "supports-color": "^9",
     "to-vfile": "^8",
     "unified": "^11"

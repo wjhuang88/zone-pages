@@ -4,7 +4,7 @@ import { TagIcon } from '@components'
 
 import styles from './Post.module.css'
 
-export default async function Post({ postData }) {
+export default function Post({ postData }) {
   return (
     <main className="main">
       <div className={styles.article}>
