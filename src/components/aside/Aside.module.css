@@ -49,7 +49,6 @@
   position: relative;
   padding: 15px 20px;
   border: 1px solid #f0f0f0;
-  height: 6em;
   border-radius: 16px;
   background: #fff url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
   font-size: 14px;
@@ -64,19 +63,8 @@
 }
 
 .motto>p {
-  position: relative;
+  height: 3em;
   font-weight: 300;
-}
-
-.motto>p.loading::before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
 }
 
 .motto>h2,.asidePanel>h2 {
@@ -147,5 +135,15 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes rotate-icon {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
   }
 }
