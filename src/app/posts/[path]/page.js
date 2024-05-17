@@ -6,7 +6,7 @@ export default async function Page({ params }) {
   const postHtml = await getPost(params.path, postMeta.update_time)
   const postData = {
     ...postMeta,
-    contentHtml: postHtml.replace(/<img\s+src\s*="(.*)"/g, `<img src="/assets?img=${postMeta.parent}/$1"`)
+    contentHtml: postHtml.replace(/<img\s+src\s*="(.*)"/g, `<img src="/proxy?img=${postMeta.parent}/$1"`)
   }
 
   return <Post postData={postData} />
