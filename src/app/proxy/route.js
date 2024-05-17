@@ -1,11 +1,11 @@
 import { CONTENT_BASE } from '@config'
 
 
-async function fetchImage(img) {
+function fetchImage(img) {
   if (img.startsWith('http://') || img.startsWith('https://')) {
-    return await fetch(img)
+    return fetch(img)
   }
-  return await fetch(`${CONTENT_BASE}/${img}`)
+  return fetch(`${CONTENT_BASE}/${img}`)
 }
 
 export async function GET(req) {
