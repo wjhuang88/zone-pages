@@ -1,5 +1,9 @@
-import Link from 'next/link'
+'use client'
 
+import Link from 'next/link'
+import { useState } from 'react'
+
+import BackgoundWave from '../background-wave'
 import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from '../icons'
 import styles from './PostList.module.css'
 
@@ -12,8 +16,14 @@ export default function PostListItem({ meta, sort }) {
 
   const animDuration = Math.min((sort / 8) + 0.6, 2)
 
+  const [waveOpacity, setWaveOpacity] = useState(0)
+
+  const enterAction = () => setWaveOpacity(1)
+  const leaveAction = () => setWaveOpacity(0)
+
   return (
-    <li className={styles.postItem} style={{ animationDuration: animDuration + 's'}}>
+    <li className={styles.postItem} style={{ animationDuration: animDuration + 's' }} onMouseEnter={enterAction} onMouseLeave={leaveAction}>
+      <BackgoundWave opacity={waveOpacity} />
       <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`} className={styles.postImage}>
         <div style={{ backgroundImage: `url(${image})` }} />
       </Link>
