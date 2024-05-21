@@ -8,6 +8,7 @@ import { LOADING_ICON_BASE64 } from '@config'
 
 import styles from './Aside.module.css'
 
+// 格言诗句载入中的样式
 const loadingStyle = {
   position: 'absolute',
   top: '0',
@@ -19,10 +20,26 @@ const loadingStyle = {
   width: '1em'
 }
 
+// 侧边栏fixed样式
+const fixedStyle = {
+  position: 'fixed',
+  top: '-10px',
+  width: '300px'
+}
+
 export default React.memo(function Aside({ recommendPosts, latestPosts }) {
 
-  let shake
+  // 动画速度
+  const baseDuration = 0.5
 
+  // 格言诗句的内容
+  const [motto, setMotto] = useState('')
+
+  // 是否进入固定侧边栏状态
+  const [sideStyle, setSideStyle] = useState({})
+
+  // 防抖参数
+  let shake
   const laodMotto = () => {
     if (shake) {
       clearTimeout(shake)
@@ -35,11 +52,25 @@ export default React.memo(function Aside({ recommendPosts, latestPosts }) {
     }, 50)
   }
 
-  const baseDuration = 0.5
-
-  const [motto, setMotto] = useState('')
+  let fixed = false;
+  const scrollAction = e => {
+    const offset = e.srcElement.scrollingElement.scrollTop
+    if (offset >= 223 && !fixed) {
+      fixed = true
+      setSideStyle(fixedStyle)
+    } else if (offset < 223 && fixed) {
+      fixed = false
+      setSideStyle({})
+    }
+  }
 
   useEffect(laodMotto, [])
+  useEffect(() => {
+    window.addEventListener('scroll', scrollAction)
+    return () => {
+      window.removeEventListener('scroll', scrollAction)
+    }
+  }, [])
 
   return (
     <div className={styles.aside}>
@@ -47,7 +78,7 @@ export default React.memo(function Aside({ recommendPosts, latestPosts }) {
         <h2 style={{position: 'relative'}}>每日诗词<span style={motto ? {} : loadingStyle}></span></h2>
         <p>{motto}</p>
       </div>
-      <div>
+      <div style={sideStyle}>
         <div className={styles.asidePanel + ' ' + styles.anim} style={{ animationDuration: (baseDuration + 0.1) + 's' }}>
           <h2>推荐</h2>
           <AsideList posts={recommendPosts} />
