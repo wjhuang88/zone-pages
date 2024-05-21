@@ -5,24 +5,26 @@
   left: 0;
   right: 0;
   z-index: 0;
-  background-color: #f0f0f0;
+  background-color: transparent;
   overflow: hidden;
   transition: opacity 0.6s;
 }
 
 .bgWave div {
+  --r: 3000px;
+  background-color: #f0f0f0;
   position: absolute;
-  background-color: #fff;
-  width: 2800px;
-  height: 2800px;
-  top: -1330px;
+  width: var(--r);
+  height: var(--r);
+  bottom: calc(-25px - var(--r));
   left: 50%;
-  margin-left: -1400px;
-  margin-top: -1400px;
-  border-radius: 45%;
+  margin-left: calc(0px - (var(--r) / 2));
+  margin-top: 0;
+  border-radius: 43%;
 }
 
 .bgWave div:nth-child(1) {
+  opacity: 0.6;
   animation: rotate 9s infinite linear;
 }
 
@@ -38,7 +40,7 @@
 
 .bgWave div:nth-child(4) {
   opacity: 0.2;
-  animation: rotate 15s infinite linear;
+  animation: rotate 18s infinite linear;
 }
 
 @keyframes rotate {
