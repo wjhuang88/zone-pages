@@ -1,4 +1,4 @@
-import { getPost, getMeta } from "./articles"
+import { getPost } from "./articles"
 import { getPostList } from "./list"
 
-export { getPost, getMeta, getPostList }
+export { getPost, getPostList }

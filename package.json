@@ -16,10 +16,11 @@
     "react-dom": "^18",
     "rehype-prism": "^2",
     "rehype-react": "^8",
+    "rehype-rewrite": "^4",
     "remark-gfm": "^4",
     "remark-parse": "^11",
     "remark-rehype": "^11",
-    "rehype-rewrite": "^4",
+    "smol-toml": "^1",
     "supports-color": "^9",
     "to-vfile": "^8",
     "unified": "^11"

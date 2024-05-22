@@ -1,10 +1,16 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 import { LOADING_ICON_BASE64 } from '@config'
 
 import styles from './PageLoading.module.css'
 
 export default function PageLoading() {
+
+  useEffect(() => window.scrollTo(0, 0))
+
   return <main className="main">
     <div className={styles.loadingBlock}>
       <span className={styles.loadingSpan}>

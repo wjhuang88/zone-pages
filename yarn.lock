@@ -1212,6 +1212,11 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
+smol-toml@^1:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/smol-toml/-/smol-toml-1.2.0.tgz#d1d565093fcb6c2e01bf6a7d50870abc48fae4a4"
+  integrity sha512-KObxdQANC/xje3OoatMbSwQf2XAvJ0RbK+4nmQRszFNZptbNRnMWqbLF/zb4sMi9xJ6HNyhWXeuZ9zC/I/XY7w==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"

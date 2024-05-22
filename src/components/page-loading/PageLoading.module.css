@@ -1,7 +1,5 @@
 .loadingBlock {
-  position: fixed;
-  top: 200px;
-  left: 40%;
+  margin: 150px auto;
 }
 
 .loadingSpan {

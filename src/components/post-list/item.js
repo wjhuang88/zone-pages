@@ -1,34 +1,25 @@
-'use client'
-
 import Link from 'next/link'
-import { useState } from 'react'
 
-import BackgoundWave from '../background-wave'
 import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from '../icons'
 import styles from './PostList.module.css'
 
 export default function PostListItem({ meta, sort }) {
   const image = meta.img || 'https://images.pexels.com/photos/1684149/pexels-photo-1684149.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=150'
   const path = meta.id
+  const cat = meta.parent
   const title = meta.title
   const des = meta.bref
   const date = meta.create_time
 
   const animDuration = Math.min((sort / 8) + 0.6, 2)
 
-  const [waveOpacity, setWaveOpacity] = useState(0)
-
-  const enterAction = () => setWaveOpacity(1)
-  const leaveAction = () => setWaveOpacity(0)
-
   return (
-    <li className={styles.postItem} style={{ animationDuration: animDuration + 's' }} onMouseEnter={enterAction} onMouseLeave={leaveAction}>
-      <BackgoundWave opacity={waveOpacity} />
-      <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`} className={styles.postImage}>
+    <li className={styles.postItem} style={{ animationDuration: animDuration + 's' }}>
+      <Link key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.postImage}>
         <div style={{ backgroundImage: `url(${image})` }} />
       </Link>
       <div className={styles.postBlock}>
-        <Link key={`post-${path}`} href="/posts/[path]" as={`/posts/${path}`} className={styles.title}>
+        <Link key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.title}>
           {title}
         </Link>
         <p className={styles.des}>{des}</p>
