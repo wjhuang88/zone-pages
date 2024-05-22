@@ -1,3 +1,5 @@
+'use client'
+
 import { TagIcon } from '@components'
 
 import styles from './Post.module.css'

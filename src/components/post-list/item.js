@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from '../icons'
