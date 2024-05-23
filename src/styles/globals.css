@@ -1,5 +1,6 @@
 html,
 body {
+  background: #fff;
   position: relative;
   z-index: -99999;
   padding: 0;
@@ -19,6 +20,7 @@ a:active, a:hover, a:focus {
 
 * {
   box-sizing: border-box;
+  background: transparent;
 }
 
 .page-wrap {

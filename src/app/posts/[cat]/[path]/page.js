@@ -3,5 +3,7 @@ import Post from './post'
 
 export default async function Page({ params }) {
   const postData = await getPost(params.cat, params.path)
-  return <Post postData={postData} />
+  return <main className="main">
+    <Post postData={postData} />
+  </main>
 }

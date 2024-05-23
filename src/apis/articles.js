@@ -19,6 +19,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-groovy'
+import { notFound } from 'next/navigation'
 
 const rehypeOptions = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs }
 const matterOptions = {
@@ -53,7 +54,7 @@ async function parseMd(catPath, source) {
 async function readHtmlFromRemoteMd(catPath, url, cacheTag) {
   const response = await fetch(url, { next: { tags: [ cacheTag ] } })
   if (!response.ok) {
-    throw new PageNotFoundError('Failed to fetch data')
+    notFound()
   }
   const md = await response.text()
   return await parseMd(catPath, md)
