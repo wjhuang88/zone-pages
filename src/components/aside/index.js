@@ -66,6 +66,7 @@ export default React.memo(function Aside({ recommendPosts, latestPosts }) {
 
   useEffect(laodMotto, [])
   useEffect(() => {
+    setSideStyle(window.scrollY >= 223 ? fixedStyle : {})
     window.addEventListener('scroll', scrollAction)
     return () => {
       window.removeEventListener('scroll', scrollAction)

@@ -12,8 +12,8 @@ import * as prod from 'react/jsx-runtime'
 
 import { mergeMeta, imgRewriter } from './tools'
 
-import './prism.min.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import 'prismjs/themes/prism.css'
+
 import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-groovy'
@@ -43,7 +43,7 @@ async function parseMd(catPath, source) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeRewrite, { rewrite: imgRewriter(catPath) })
-    .use(rehypePrism, { plugins: ['line-numbers'] })
+    .use(rehypePrism)
     .use(rehypeReact, rehypeOptions)
     .process(frontParsed.content)
   return {
