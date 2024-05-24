@@ -55,10 +55,10 @@ export default React.memo(function Aside({ recommendPosts, latestPosts }) {
   let fixed = false;
   const scrollAction = e => {
     const offset = e.srcElement.scrollingElement.scrollTop
-    if (offset >= 223 && !fixed) {
+    if (!fixed && offset >= 223) {
       fixed = true
       setSideStyle(fixedStyle)
-    } else if (offset < 223 && fixed) {
+    } else if (fixed && offset < 223) {
       fixed = false
       setSideStyle({})
     }
