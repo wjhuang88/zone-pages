@@ -1,7 +1,11 @@
-.header {
+@mixin flex-common {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.header {
+  @include flex-common;
   justify-content: space-between;
   height: 56px;
   width: 1024px;
@@ -9,9 +13,7 @@
 }
 
 .nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flex-common;
   justify-content: right;
   width: 884px;
   margin: 0 0 0 100px;

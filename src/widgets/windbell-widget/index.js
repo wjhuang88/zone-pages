@@ -1,4 +1,4 @@
-import styles from './WindbellWidget.module.css'
+import styles from './WindbellWidget.module.scss'
 
 export default function WindbellWidget() {
   return <div className={styles.container}>

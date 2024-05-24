@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './NavBlock.module.css'
+import styles from './NavBlock.module.scss'
 
 export default function NavBlock({ title, subtitle, href, selected, sort }) {
   const blockClass = selected ? `${styles.navBlock} ${styles.selectedBlockText} ${styles.selectedBlockBorder}` : styles.navBlock

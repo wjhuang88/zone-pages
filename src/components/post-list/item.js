@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from '../icons'
-import styles from './PostList.module.css'
+import styles from './PostList.module.scss'
 
 export default function PostListItem({ meta, sort }) {
   const image = meta.img || 'https://images.pexels.com/photos/1684149/pexels-photo-1684149.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=150'

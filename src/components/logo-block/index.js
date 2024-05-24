@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './LogoBlock.module.css'
+import styles from './LogoBlock.module.scss'
 
 export default function LogoBlock() {
   return (

@@ -1,0 +1,149 @@
+.list {
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 0;
+  list-style: none;
+  border-top: 1px solid #f0f0f0;
+  &>li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.link {
+  margin: 0 0 0 8px;
+  line-height: 1.2;
+  font-weight: 300;
+  border-bottom: 1px solid #fff;
+  transition: all 0.2s;
+  &:hover {
+    color: #7f8c8d;
+    border-color: #7f8c8d;
+  }
+}
+
+.aside {
+  margin: 40px 0 0 40px;
+  width: 300px;
+  flex: 0 0 auto;
+}
+
+@mixin panel-common {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  word-break: break-word;
+}
+
+@mixin panel-header {
+  font-size: 14px;
+  color: #bdc3c7;
+  line-height: 1;
+  margin: 0 0 5px;
+  padding: 0 0 0 5px;
+  border-left: 4px solid #bdc3c7;
+  transition: color 0.2s;
+}
+
+@mixin motto-shadow {
+  content: "";
+  position: absolute;
+  right: 8px;
+  bottom: 20px;
+  width: 90%;
+  height: 20%;
+  z-index: -1;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.asidePanel {
+  margin: 20px 0 0;
+  padding: 15px 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #34495e;
+  transition: border-color 0.2s;
+  &:hover {
+    border-color: #d0d0d0;
+    h2 {
+      color: #95a5a6;
+    }
+  }
+  &>h2 {
+    @include panel-common;
+    @include panel-header;
+  }
+}
+
+.motto {
+  position: relative;
+  padding: 15px 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  background: #fff url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
+  font-size: 14px;
+  color: #6e7479;
+  &::after {
+    @include motto-shadow;
+    transform: rotate(3deg);
+  }
+  &::before {
+    @include motto-shadow;
+    transform: rotate(-2deg);
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+    &::before {
+      opacity: 1;
+    }
+    h2 {
+      color: #95a5a6;
+    }
+  }
+  &>p {
+    height: 3em;
+    font-weight: 300;
+    @include panel-common
+  }
+  &>h2 {
+    @include panel-common;
+    @include panel-header;
+  }
+}
+
+.anim {
+  animation: panel-in 0.5s;
+}
+
+@keyframes panel-in {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-icon {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}

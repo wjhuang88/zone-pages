@@ -4,9 +4,9 @@ import WindbellWidget from '@widgets/windbell-widget'
 import CatWidget from '@widgets/cat-widget'
 import { getPostList } from '@/apis'
 
-import styles from '@styles/fonts/Fonts.module.css'
+import styles from '@styles/fonts/Fonts.module.scss'
 
-import '@styles/globals.css'
+import '@styles/globals.scss'
 
 const quicksand = localFont({ src: '../styles/fonts/Quicksand-VariableFont_wght.ttf', variable: '--font-quicksand' })
 

@@ -1,0 +1,145 @@
+@mixin art-head($fs) {
+  color: #34495e;
+  text-rendering: optimizelegibility;
+  margin: 0 0 16px;
+  font-weight: 400;
+  font-size: $fs;
+}
+
+@mixin table-cell {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.article {
+  margin-top: 40px;
+  width: 100%;
+  animation: init-post .4s;
+  img {
+    max-width: 600px;
+  }
+  h1 {
+    @include art-head(24px);
+  }
+  h2 {
+    @include art-head(20px);
+  }
+  h3, h4, h5, h6 {
+    @include art-head(18px);
+  }
+  p {
+    color: #2c3e50;
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0 0 20px;
+    word-break: break-word;
+    &:has(>img) {
+      text-align: center;
+    }
+    code {
+      color: #2c3e509d;
+      background-color: #1b1f230d;
+      border: 0;
+      margin: 0;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 85%;
+      white-space: normal;
+      font-weight: normal;
+      vertical-align: text-top;
+    }
+  }
+  blockquote {
+    border-inline-start: 8px solid #ECEFF4;
+    margin-block: 0 20px;
+    margin-inline: 0;
+    padding-inline: 10px 0;
+    &>p {
+      color: #959ba7;
+      margin: 0;
+      &>code {
+        color: #959ba79d;
+      }
+    }
+  }
+  ul {
+    padding-inline-start: 1em;
+    color: #2c3e50;
+    line-height: 1.8;
+    font-weight: 300;
+    font-size: 16px;
+    word-break: break-word;
+  }
+  table {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: auto;
+    word-break: initial;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.6;
+    tr:not(:has(>th)):hover {
+      background-color: #ECEFF4;
+    }
+    th {
+      font-weight: 600;
+      background-color: #E5E9F0;
+      @include table-cell;
+    }
+    td {
+      @include table-cell;
+    }
+  }
+  pre {
+    width: 100%;
+    font-size: 12px;
+    overflow-x: scroll;
+    margin-bottom: 20px;
+  }
+  a {
+    font-size: 85%;
+    display: inline-block;
+    vertical-align: text-top;
+    line-height: 1.2;
+    padding: 0 2px 0;
+    transition: all .2s;
+    border-bottom: 1px solid #2c3e50;
+    &:hover {
+      color: #f39c12;
+      border-color: #f39c12;
+    }
+  }
+}
+
+.title {
+  position: relative;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #bdc3c7;
+  margin: 0 0 32px;
+  &>span:not(:first-child) {
+    margin: 0 0 0 15px;
+  }
+}
+
+@keyframes init-post {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

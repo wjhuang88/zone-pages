@@ -1,5 +1,5 @@
 import PostListItem from './item'
-import styles from './PostList.module.css'
+import styles from './PostList.module.scss'
 
 export default function PostList({ posts }) {
   return (

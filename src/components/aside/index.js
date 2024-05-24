@@ -6,7 +6,7 @@ import { load } from 'jinrishici'
 import AsideList from './aside-list'
 import { LOADING_ICON_BASE64 } from '@config'
 
-import styles from './Aside.module.css'
+import styles from './Aside.module.scss'
 
 // 格言诗句载入中的样式
 const loadingStyle = {

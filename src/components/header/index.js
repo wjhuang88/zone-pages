@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import LogoBlock from '../logo-block'
 import NavBlock from '../nav-block'
 
-import styles from './PageHeader.module.css'
+import styles from './PageHeader.module.scss'
 
 export default function PageHeader() {
 

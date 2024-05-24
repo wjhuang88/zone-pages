@@ -21,11 +21,10 @@
     "remark-parse": "^11",
     "remark-rehype": "^11",
     "smol-toml": "^1",
-    "supports-color": "^9",
     "to-vfile": "^8",
     "unified": "^11"
   },
   "devDependencies": {
-    "url-loader": "^4"
+    "sass": "^1"
   }
 }

@@ -1,6 +1,6 @@
 import { TagIcon } from '@components'
 
-import styles from './Post.module.css'
+import styles from './Post.module.scss'
 
 export default function Post({ postData }) {
 

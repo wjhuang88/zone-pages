@@ -18,14 +18,23 @@
   margin: 0;
   border-bottom: 1px solid #f0f0f0;
   animation: item-in 0.5s ease-in-out;
-}
-
-.postItem:nth-child(1) {
-  padding: 0 2px 30px 0;
-}
-
-.postItem:not(:nth-child(1)) {
   padding: 30px 2px 30px 0;
+  &:nth-child(1) {
+    padding: 0 2px 30px 0;
+  }
+}
+
+@mixin image-trans($layer) {
+  content: '';
+  position: absolute;
+  z-index: $layer;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .4s;
 }
 
 .postImage {
@@ -41,71 +50,45 @@
   border-radius: 14px;
   overflow: hidden;
   text-align: center;
-}
-
-.postImage::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  visibility: hidden;
-  border-radius: 8px;
-  width: 100%;
-  height: 100%;
-  background: #e67e22;
-  opacity: 0;
-  transition: all .4s;
-}
-
-.postImage:hover::before {
-  visibility: visible;
-  opacity: .7;
-}
-
-.postImage::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  margin-top: 0;
-  visibility: hidden;
-  background-image: url('/assets/eye.svg');
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-position: center center;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: all .4s;
-}
-
-.postImage:hover::after {
-  visibility: visible;
-  opacity: 1;
-}
-
-.postImage>div {
-  width: 100%;
-  height: 100%;
-  transition: all 0.2s;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.postImage:hover>div {
-  transform: scale(1.15);
+  &>div {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &::before {
+    @include image-trans(2);
+    border-radius: 8px;
+    background: #e67e22;
+  }
+  &::after {
+    @include image-trans(5);
+    margin-top: 0;
+    background-image: url('/assets/eye.svg');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center center;
+  }
+  &:hover {
+    &::before {
+      visibility: visible;
+      opacity: .7;
+    }
+    &::after {
+      visibility: visible;
+      opacity: 1;
+    }
+    &>div {
+      transform: scale(1.15);
+    }
+  }
 }
 
 .postBlock {
   z-index: 1;
   margin: 0 0 0 20px;
-}
-
-.postBlock:hover .des {
-  color: #8e9d9e;
 }
 
 .time {
@@ -119,11 +102,10 @@
   line-height: 1.5;
   border-bottom: 1px solid #fff;
   transition: all 0.2s;
-}
-
-.title:hover {
-  color: #7f8c8d;
-  border-color: #7f8c8d;
+  &:hover {
+    color: #7f8c8d;
+    border-color: #7f8c8d;
+  }
 }
 
 .des {
@@ -135,6 +117,9 @@
   text-overflow: ellipsis;
   overflow: hidden;
   transition: color 0.2s;
+  .postBlock:hover & {
+    color: #8e9d9e;
+  }
 }
 
 .footer {

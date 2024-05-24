@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 import { LOADING_ICON_BASE64 } from '@config'
 
-import styles from './PageLoading.module.css'
+import styles from './PageLoading.module.scss'
 
 export default function PageLoading() {
 

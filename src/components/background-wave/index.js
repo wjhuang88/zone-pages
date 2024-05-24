@@ -1,4 +1,4 @@
-import styles from './BackgroundWave.module.css'
+import styles from './BackgroundWave.module.scss'
 
 export default function BackgoundWave({opacity}) {
   return <div className={styles.bgWave} style={{ opacity: opacity ?? '1' }}>
