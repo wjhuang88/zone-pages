@@ -12,11 +12,15 @@ import * as prod from 'react/jsx-runtime'
 
 import { mergeMeta, imgRewriter } from './tools'
 
-import './prism-nord.css'
+import './prism.min.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-groovy'
+import 'prismjs/components/prism-rust'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-yaml'
 import { notFound } from 'next/navigation'
 
 const rehypeOptions = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs }

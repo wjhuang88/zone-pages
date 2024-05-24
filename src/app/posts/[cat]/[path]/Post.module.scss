@@ -99,6 +99,9 @@
     font-size: 12px;
     overflow-x: scroll;
     margin-bottom: 20px;
+    &[class*="language-"] {
+      border-radius: 8px;
+    }
   }
   a {
     font-size: 85%;
