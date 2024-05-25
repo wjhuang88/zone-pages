@@ -1,11 +1,11 @@
 import PostListItem from './item'
 import styles from './PostList.module.scss'
 
-export default function PostList({ posts }) {
+export default function PostList({ postsMeta }) {
   return (
     <ul className={styles.postList}>
-      {posts?.map((post, index) => {
-        return <PostListItem key={post.id} meta={post} sort={index} />
+      {postsMeta?.map((meta, index) => {
+        return <PostListItem key={meta.id} meta={meta} sort={index} />
       })}
     </ul>
   );

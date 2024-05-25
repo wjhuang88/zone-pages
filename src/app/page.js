@@ -1,5 +1,23 @@
-import Home from './home'
+import { cache } from 'react'
 
-export default function Page() {
-  return <Home />
+import { PostList } from '@components'
+import { getIndexData } from '@/apis'
+
+const fetchData = cache(() => getIndexData())
+
+export async function generateMetadata() {
+  const data = await fetchData()
+  return data.meta
+}
+
+export default async function Page() {
+
+  const data = await fetchData()
+  const posts = data.list
+
+  return <>
+    <main className="main">
+      <PostList postsMeta={posts} />
+    </main>
+  </>
 }

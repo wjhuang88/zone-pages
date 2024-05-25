@@ -4,6 +4,8 @@ const giteePath = 'https://gitee.com/wjhuang88/zone-articles/raw/master'
 export const USER_HOME = process.env.HOME || process.env.USERPROFILE
 export const CONTENT_BASE = process.env.NODE_ENV == 'development' ? giteePath : githubPath
 
+export const DEFAULT_TITLE = "Gerald's Blog"
+
 export const LOADING_ICON_BASE64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSF" +
   "JNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfo" +
   "BQwAABs+kMprAAAMIklEQVR42u2dWWwbxxnHf8NbpKibui1Zjo/IlmWnro8ctZ0TKZA6RVsggBH0oUELFAjQhxZogzbPLRyg6FNRIPVLi9Ro0AB" +
