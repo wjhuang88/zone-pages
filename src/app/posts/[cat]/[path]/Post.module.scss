@@ -2,8 +2,10 @@
   color: #34495e;
   text-rendering: optimizelegibility;
   margin: 0 0 16px;
-  font-weight: 400;
-  font-size: $fs;
+  font: {
+    weight: 400;
+    size: $fs;
+  };
 }
 
 @mixin table-cell {
@@ -30,8 +32,10 @@
   p {
     color: #2c3e50;
     line-height: 1.8;
-    font-weight: 300;
-    font-size: 16px;
+    font: {
+      weight: 300;
+      size: 16px;
+    }
     margin: 0 0 20px;
     word-break: break-word;
     &:has(>img) {
@@ -44,16 +48,20 @@
       margin: 0;
       padding: 2px 6px;
       border-radius: 6px;
-      font-size: 85%;
       white-space: normal;
-      font-weight: normal;
       vertical-align: text-top;
+      font: {
+        size: 85%;
+        weight: normal;
+      };
     }
   }
   blockquote {
     border-inline-start: 8px solid #eceff4;
-    margin-block: 0 20px;
-    margin-inline: 0;
+    margin: {
+      block: 0 20px;
+      inline: 0;
+    }
     padding-inline: 10px 0;
     &>p {
       color: #959ba7;
@@ -67,8 +75,10 @@
     padding-inline-start: 1em;
     color: #2c3e50;
     line-height: 1.8;
-    font-weight: 300;
-    font-size: 16px;
+    font: {
+      weight: 300;
+      size: 16px;
+    }
     word-break: break-word;
   }
   table {
@@ -78,8 +88,10 @@
     margin-bottom: 20px;
     overflow: auto;
     word-break: initial;
-    border-spacing: 0;
-    border-collapse: collapse;
+    border: {
+      spacing: 0;
+      collapse: collapse;
+    };
     text-align: left;
     line-height: 1.6;
     tr:not(:has(>th)) {
@@ -103,8 +115,9 @@
     overflow-x: scroll;
     margin-bottom: 20px;
     &[class*="language-"] {
-      border: 1px solid #e5e9f0;
-      border-radius: 12px;
+      border: 1px solid #e5e9f0 {
+        radius: 12px;
+      }
       transition: box-shadow .2s;
       &:hover {
         box-shadow: 0px 0px 8px 0px #00000020;
@@ -115,9 +128,11 @@
     $color: #88929b;
     $hover-color: #f39c12;
     color: $color;
-    text-decoration: $color solid underline 1px;
-    text-underline-offset: 4px;
     padding: 0 2px 0;
+    text: {
+      decoration: $color solid underline 1px;
+      underline-offset: 4px;
+    }
     transition: color .2s,text-decoration-color .2s;
     &:hover {
       color: $hover-color;
@@ -139,11 +154,13 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 14px;
-  font-weight: 400;
   line-height: 20px;
   color: #bdc3c7;
   margin: 0 0 32px;
+  font: {
+    size: 14px;
+    weight: 400;
+  }
   &>span:not(:first-child) {
     margin: 0 0 0 15px;
   }

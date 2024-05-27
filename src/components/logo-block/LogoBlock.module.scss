@@ -8,14 +8,17 @@
 .title {
   margin: 0;
   width: 220px;
-  font-size: 22px;
-  font-weight: 300;
+  font: {
+    size: 22px;
+    weight: 300;
+  }
   color: #e67e22;
   text-align: left;
   user-select: none;
-  background: url('/assets/title-cat.webp') no-repeat;
-  background-size: 100px;
-  background-position: 160px 0;
+  background: url('/assets/title-cat.webp') no-repeat {
+    size: 100px;
+    position: 160px 0;
+  }
   transition: background-position .3s cubic-bezier(0.68,-0.6,0.32,1.6);
   animation: init-title 1.2s;
   .container:hover>& {
@@ -25,8 +28,10 @@
 
 .titletail {
   margin: 0 0 0 2px;
-  font-size: 16px;
-  font-weight: 300;
+  font: {
+    size: 16px;
+    weight: 300;
+  }
   color:#bdc3c7;
   user-select: none;
 }
@@ -35,9 +40,11 @@
   padding-top: 4px;
   width: 220px;
   height: 25px;
-  font-style: italic;
-  font-weight: 100;
-  font-size: 14px;
+  font: {
+    style: italic;
+    weight: 100;
+    size: 14px;
+  }
   color: #bdc3c7;
   text-align: right;
   border-top: 1px solid #2c3e50;

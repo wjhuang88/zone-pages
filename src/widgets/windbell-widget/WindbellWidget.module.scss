@@ -8,7 +8,7 @@
   height: 225px;
   background: #fff url('/assets/windbell.png') no-repeat 0/120px;
   transform-origin: 50% 0;
-  animation: tail-swing 10s infinite;
+  animation: main-swing 10s infinite;
 }
 .tail {
   position: absolute;
@@ -28,7 +28,7 @@
   }
 
   50% {
-    transform: rotate(-8deg);
+    transform: rotate(-4deg);
   }
 
   100% {
@@ -42,7 +42,7 @@
     transform: rotate(6deg);
   }
   50% {
-    transform: rotate(-4deg);
+    transform: rotate(-8deg);
   }
   100% {
     transform: rotate(6deg);

@@ -25,10 +25,11 @@
 
 .aside {
   display: flex;
-  flex-direction: column;
   margin: 40px 0 0 40px;
   width: 300px;
-  flex: 0 0 auto;
+  flex: 0 0 auto {
+    direction: column;
+  }
 }
 
 @mixin panel-common {
@@ -64,8 +65,9 @@
 .asidePanel {
   margin: 20px 0 0;
   padding: 15px 20px;
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
+  border: 1px solid #f0f0f0 {
+    radius: 16px;
+  }
   font-size: 14px;
   color: #34495e;
   transition: border-color 0.2s;
@@ -84,8 +86,9 @@
 .motto {
   position: relative;
   padding: 15px 20px;
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
+  border: 1px solid #f0f0f0 {
+    radius: 16px;
+  }
   background: #fff url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
   font-size: 14px;
   color: #6e7479;
