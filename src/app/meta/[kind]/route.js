@@ -1,19 +1,11 @@
-import { getPostList } from '@/apis'
+import { getLatestList, getRecommendList } from '@/apis'
 
 export async function GET(_, { params }) {
   if (params.kind == 'recommend_posts') {
-    return Response.json(await recommendPosts())
+    return Response.json(await getRecommendList())
   } else if (params.kind == 'latest_posts') {
-    return Response.json(await latestPosts())
+    return Response.json(await getLatestList())
   } else {
     return Response.json({})
   }
-}
-
-async function recommendPosts() {
-  return (await getPostList()).slice(0, 5)
-}
-
-async function latestPosts() {
-  return (await getPostList()).slice(0, 5)
 }

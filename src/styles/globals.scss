@@ -44,4 +44,5 @@ a {
 
 .main {
   @include flex-common(-999, 684px);
+  flex-basis: 684px;
 }

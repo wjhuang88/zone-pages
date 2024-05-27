@@ -1,3 +1,6 @@
+import * as prod from 'react/jsx-runtime'
+import { notFound } from 'next/navigation'
+
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
@@ -7,9 +10,8 @@ import rehypeRewrite from 'rehype-rewrite'
 import remarkGfm from 'remark-gfm'
 import matter from 'gray-matter'
 import { parse, stringify } from 'smol-toml'
-import { CONTENT_BASE } from '@config'
-import * as prod from 'react/jsx-runtime'
 
+import { CONTENT_BASE } from '@config'
 import { mergeMeta, imgRewriter } from './tools'
 
 import 'prismjs/themes/prism.css'
@@ -21,7 +23,6 @@ import 'prismjs/components/prism-rust'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-yaml'
-import { notFound } from 'next/navigation'
 
 const rehypeOptions = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs }
 const matterOptions = {

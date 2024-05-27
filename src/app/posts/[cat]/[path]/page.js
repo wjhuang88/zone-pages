@@ -15,7 +15,5 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const postData = await fetchData(params.cat, params.path)
-  return <main className="main">
-    <Post postData={postData} />
-  </main>
+  return <Post postData={postData} />
 }

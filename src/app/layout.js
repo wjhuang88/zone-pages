@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
       <body className={styles.bodyFont}>
         <PageHeader />
         <div className='page-wrap'>
-          {children}
+          <main className="main">{children}</main>
           <Aside />
         </div>
         <WindbellWidget />

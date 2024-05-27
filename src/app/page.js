@@ -15,9 +15,5 @@ export default async function Page() {
   const data = await fetchData()
   const posts = data.list
 
-  return <>
-    <main className="main">
-      <PostList postsMeta={posts} />
-    </main>
-  </>
+  return <PostList postsMeta={posts} />
 }
