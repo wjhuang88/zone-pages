@@ -1,6 +1,8 @@
+@import '../../styles/colors';
+
 .container {
   display: block;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid $normal-border-color;
   padding: 0 10px;
   animation: init 1.2s;
 }
@@ -12,7 +14,7 @@
     size: 22px;
     weight: 300;
   }
-  color: #e67e22;
+  color: $fg-color;
   text-align: left;
   user-select: none;
   background: url('/assets/title-cat.webp') no-repeat {
@@ -32,7 +34,7 @@
     size: 16px;
     weight: 300;
   }
-  color:#bdc3c7;
+  color: $fade-text-color;
   user-select: none;
 }
 
@@ -45,24 +47,24 @@
     weight: 100;
     size: 14px;
   }
-  color: #bdc3c7;
+  color: $fade-text-color;
   text-align: right;
-  border-top: 1px solid #2c3e50;
+  border-top: 1px solid $normal-text-color;
   user-select: none;
   animation: init-subtitle 1.2s;
 }
 
 @keyframes init {
   0% {
-    border-color: #fff;
+    border-color: $bg-color;
   }
 
   60% {
-    border-color: #fff;
+    border-color: $bg-color;
   }
 
   100% {
-    border-color: #ddd;
+    border-color: $normal-border-color;
   }
 }
 
@@ -83,17 +85,17 @@
 @keyframes init-subtitle {
   0% {
     opacity: 0;
-    border-color: #fff;
+    border-color: $bg-color;
     transform: translateX(-200px);
   }
 
   70% {
-    border-color: #fff;
+    border-color: $bg-color;
   }
 
   100% {
     opacity: 1;
-    border-color: #2c3e50;
+    border-color: $normal-text-color;
     transform: translateX(0);
   }
 }

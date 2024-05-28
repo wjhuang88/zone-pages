@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .postList {
   z-index: -99;
   margin: 40px 0 0 0;
@@ -16,7 +18,7 @@
   align-items: center;
   width: 100%;
   margin: 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid $fade-border-color;
   animation: item-in 0.5s ease-in-out;
   padding: 30px 2px 30px 0;
   &:nth-child(1) {
@@ -65,7 +67,7 @@
   &::before {
     @include image-trans(2);
     border-radius: 8px;
-    background: #e67e22;
+    background: $fg-color;
   }
   &::after {
     @include image-trans(5);
@@ -103,14 +105,14 @@
 
 .title {
   margin: -7px 0 4px;
-  color: #34495e;
+  color: $head-text-color;
   font-size: 18px;
   line-height: 1.5;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $bg-color;
   transition: all 0.2s;
   &:hover {
-    color: #7f8c8d;
-    border-color: #7f8c8d;
+    color: $head-text-hover-color;
+    border-color: $head-text-hover-color;
   }
 }
 
@@ -119,12 +121,12 @@
   height: 48px;
   font-size: 13px;
   line-height: 24px;
-  color: #bdc3c7;
+  color: $fade-text-color;
   text-overflow: ellipsis;
   overflow: hidden;
   transition: color 0.2s;
   .postBlock:hover & {
-    color: #8e9d9e;
+    color: $fade-text-hover-color;
   }
 }
 
@@ -138,7 +140,7 @@
     weight: 400;
   }
   line-height: 20px;
-  color: #bdc3c7;
+  color: $fade-text-color;
 }
 
 @keyframes item-in {

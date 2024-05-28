@@ -7,6 +7,8 @@ import CatWidget from '@widgets/cat-widget'
 import styles from '@styles/fonts/Fonts.module.scss'
 
 import '@styles/globals.scss'
+import 'prismjs/themes/prism.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 const quicksand = localFont({ src: '../styles/fonts/Quicksand-VariableFont_wght.ttf', variable: '--font-quicksand' })
 

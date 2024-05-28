@@ -1,19 +1,21 @@
+@import '../../styles/colors';
+
 .navBlock {
   display: block;
   padding: 5px;
   margin: 0 5px;
   width: 68px;
   text-align: center;
-  color: #2c3e50;
+  color: $normal-text-color;
   cursor: pointer;
-  border: 1px solid #f0f0f0 {
+  border: 1px solid $fade-border-color {
     radius: 10px 2px 10px 2px;
   }
   user-select: none;
   transition: border-color 0.2s;
   animation: nav-in 0.5s;
   &:hover {
-    border-color: #e0e0e0;
+    border-color: $fade-border-hover-color;
   }
 }
 
@@ -22,31 +24,31 @@
   line-height: 20px;
   transition: color 0.2s;
   .navBlock:hover & {
-    color: #f39c12;
+    color: $fg-hover-color;
   }
 }
 
 .navSubtitle {
   font-size: 10px;
   line-height: 20px;
-  color: #bdc3c7;
-  border-top: 1px solid #2c3e50;
+  color: $fade-text-color;
+  border-top: 1px solid $normal-text-color;
   transition: all 0.2s;
   .navBlock:hover & {
-    color: #a7a49e;
-    border-color: #f39c12;
+    color: $fade-text-hover-color;
+    border-color: $fg-hover-color;
   }
 }
 
 .selectedBlockBorder {
-  border-color: #e67e22;
+  border-color: $fg-color;
   &.navBlock:hover {
-    border-color: #f39c12;
+    border-color: $fg-hover-color;
   }
 }
 
 .selectedBlockText {
-  color: #e67e22;
+  color: $fg-color;
 }
 
 @keyframes nav-in {

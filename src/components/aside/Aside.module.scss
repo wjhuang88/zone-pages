@@ -1,8 +1,10 @@
+@import '../../styles/colors';
+
 .list {
   margin: 10px 0 0 0;
   padding: 10px 0 0 0;
   list-style: none;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $fade-border-color;
   &>li {
     display: flex;
     flex-direction: row;
@@ -15,11 +17,11 @@
   margin: 0 0 0 8px;
   line-height: 1.2;
   font-weight: 300;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $bg-color;
   transition: all 0.2s;
   &:hover {
-    color: #7f8c8d;
-    border-color: #7f8c8d;
+    color: $head-text-hover-color;
+    border-color: $head-text-hover-color;
   }
 }
 
@@ -35,17 +37,19 @@
 @mixin panel-common {
   padding: 0;
   margin: 0;
-  font-weight: normal;
   word-break: break-word;
 }
 
 @mixin panel-header {
-  font-size: 14px;
-  color: #bdc3c7;
+  font: {
+    weight: normal;
+    size: 14px;
+  }
+  color: $fade-text-color;
   line-height: 1;
   margin: 0 0 5px;
   padding: 0 0 0 5px;
-  border-left: 4px solid #bdc3c7;
+  border-left: 4px solid $fade-text-color;
   transition: color 0.2s;
 }
 
@@ -65,16 +69,16 @@
 .asidePanel {
   margin: 20px 0 0;
   padding: 15px 20px;
-  border: 1px solid #f0f0f0 {
-    radius: 16px;
-  }
   font-size: 14px;
-  color: #34495e;
+  color: $head-text-color;
   transition: border-color 0.2s;
+  border: 1px solid $fade-border-color {
+      radius: 16px;
+    }
   &:hover {
-    border-color: #d0d0d0;
+    border-color: $fade-border-hover-color;
     h2 {
-      color: #95a5a6;
+      color: $fade-text-hover-color;
     }
   }
   &>h2 {
@@ -86,12 +90,12 @@
 .motto {
   position: relative;
   padding: 15px 20px;
-  border: 1px solid #f0f0f0 {
+  border: 1px solid $fade-border-color {
     radius: 16px;
   }
-  background: #fff url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
+  background: $bg-color url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
   font-size: 14px;
-  color: #6e7479;
+  color: $head-text-color;
   &::after {
     @include motto-shadow;
     transform: rotate(3deg);
@@ -108,7 +112,7 @@
       opacity: 1;
     }
     h2 {
-      color: #95a5a6;
+      color: $fade-text-hover-color;
     }
   }
   &>p {

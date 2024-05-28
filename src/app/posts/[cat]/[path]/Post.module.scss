@@ -1,5 +1,7 @@
+@import '../../../../styles/colors';
+
 @mixin art-head($fs) {
-  color: #34495e;
+  color: $head-text-color;
   text-rendering: optimizelegibility;
   margin: 0 0 16px;
   font: {
@@ -10,7 +12,7 @@
 
 @mixin table-cell {
   padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+  border: 1px solid $normal-border-color;
 }
 
 .article {
@@ -30,7 +32,7 @@
     @include art-head(18px);
   }
   p {
-    color: #2c3e50;
+    color: $normal-text-color;
     line-height: 1.8;
     font: {
       weight: 300;
@@ -42,8 +44,8 @@
       text-align: center;
     }
     code {
-      color: #2c3e509d;
-      background-color: #1b1f230d;
+      color: rgba($normal-text-color, 0.4);
+      background-color: rgba($normal-border-color, 0.3);
       border: 0;
       margin: 0;
       padding: 2px 6px;
@@ -57,23 +59,23 @@
     }
   }
   blockquote {
-    border-inline-start: 8px solid #eceff4;
+    border-inline-start: 8px solid $code-bg-color;
     margin: {
       block: 0 20px;
       inline: 0;
     }
     padding-inline: 10px 0;
     &>p {
-      color: #959ba7;
+      color: $quote-text-color;
       margin: 0;
       &>code {
-        color: #959ba79d;
+        color: rgba($quote-text-color, 0.6);
       }
     }
   }
   ul {
     padding-inline-start: 1em;
-    color: #2c3e50;
+    color: $normal-text-color;
     line-height: 1.8;
     font: {
       weight: 300;
@@ -97,12 +99,12 @@
     tr:not(:has(>th)) {
       transition: background-color .3s;
       &:hover {
-        background-color: #eceff46f;
+        background-color: rgba($code-bg-color, 0.3);
       }
     }
     th {
       font-weight: inherit;
-      background-color: #e5e9f0;
+      background-color: rgba($code-bg-color, 0.5);
       @include table-cell;
     }
     td {
@@ -115,18 +117,18 @@
     overflow-x: scroll;
     margin-bottom: 20px;
     &[class*="language-"] {
-      border: 1px solid #e5e9f0 {
+      border: 1px solid rgba($code-bg-color, 0.9) {
         radius: 12px;
       }
       transition: box-shadow .2s;
       &:hover {
-        box-shadow: 0px 0px 8px 0px #00000020;
+        box-shadow: 0px 0px 6px 0px #00000020;
       }
     }
   }
   a {
-    $color: #88929b;
-    $hover-color: #f39c12;
+    $color: rgba($normal-text-color, 0.5);
+    $hover-color: $fg-hover-color;
     color: $color;
     padding: 0 2px 0;
     text: {
@@ -141,7 +143,7 @@
   }
   :not(pre)>code[class*=language-],
   pre[class*=language-] {
-    background: #eceff47f;
+    background: rgba($code-bg-color, 0.5);
   }
 }
 
@@ -155,7 +157,7 @@
   justify-content: flex-start;
   align-items: center;
   line-height: 20px;
-  color: #bdc3c7;
+  color: $fade-text-color;
   margin: 0 0 32px;
   font: {
     size: 14px;

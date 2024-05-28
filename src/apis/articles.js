@@ -14,8 +14,6 @@ import { parse, stringify } from 'smol-toml'
 import { CONTENT_BASE } from '@config'
 import { mergeMeta, imgRewriter } from './tools'
 
-import 'prismjs/themes/prism.css'
-
 import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-groovy'
