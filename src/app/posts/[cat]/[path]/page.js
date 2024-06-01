@@ -2,7 +2,9 @@ import { cache } from 'react'
 
 import { DEFAULT_TITLE } from '@/common-config'
 import { getPost } from '@/apis'
-import Post from './post'
+import { TagIcon } from '@components'
+
+import styles from './Post.module.scss'
 
 const fetchData = cache((cat, path) => getPost(cat, path))
 
@@ -15,5 +17,16 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const postData = await fetchData(params.cat, params.path)
-  return <Post postData={postData} />
+  return (
+    <article className={styles.article}>
+      <h1 className={styles.title}>{postData.title}</h1>
+      <div className={styles.subtitle}>
+        <span>发表于&nbsp;{postData.create_time}</span>
+        <span>字数&nbsp;{postData.size}</span>
+        <span>阅读&nbsp;{postData.read_count}</span>
+        <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
+      </div>
+      {postData.compomnents}
+    </article>
+  )
 }

@@ -1,8 +1,8 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import LogoBlock from '../logo-block'
-import NavBlock from '../nav-block'
+import LogoBlock from './logo-block'
+import NavBlock from './nav-block'
 
 import styles from './PageHeader.module.scss'
 
@@ -22,9 +22,11 @@ export default function PageHeader() {
     <header className={styles.header}>
       <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
-        {navList.map((item, index) =>
-          <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
-        )}
+        <ul>
+          {navList.map((item, index) =>
+            <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
+          )}
+        </ul>
       </nav>
     </header>
   );

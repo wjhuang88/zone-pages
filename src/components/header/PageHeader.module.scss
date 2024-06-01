@@ -1,3 +1,6 @@
+@import 'logo-block';
+@import 'nav-block';
+
 @mixin flex-common {
   display: flex;
   flex-direction: row;
@@ -12,9 +15,13 @@
   margin: 24px auto 0 auto;
 }
 
-.nav {
+.nav > ul {
   @include flex-common;
   justify-content: right;
-  width: 884px;
-  margin: 0 0 0 100px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li:not(:nth-child(1)) {
+    margin: 0 0 0 5px;
+  }
 }

@@ -13,9 +13,9 @@ export default async function Aside() {
   const recommend = await getRecommendList()
 
   return (
-    <div className={styles.aside}>
+    <aside className={styles.aside}>
       <Motto speed={baseDuration} />
       <FloatPanel speed={baseDuration} recommendPosts={recommend} latestPosts={latest} />
-    </div>
+    </aside>
   )
 }
