@@ -1,4 +1,7 @@
+import { cache } from 'react'
 import moment from 'dayjs'
+
+import { proxyEncode } from '@/common-config'
 
 export function createMeta(data, catPath, excerpt) {
   return {
@@ -22,12 +25,15 @@ export function mergeMeta(data, catPath, excerpt) {
   }
 }
 
+const encode = cache((src) => proxyEncode(src))
+
 export function imgRewriter(basePath) {
   return (node, _, __) => {
     if (node.tagName == 'img' && node.properties.src) {
       const origin = node.properties.src
       if (!origin.startsWith('http://') && !origin.startsWith('https://')) {
-        node.properties.src = `/proxy?img=${basePath}/${origin}`
+        const encoded = encode(`${basePath}/${origin}`)
+        node.properties.src = `/proxy/${encoded}`
       }
     }
   }

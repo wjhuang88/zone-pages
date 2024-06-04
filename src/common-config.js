@@ -1,3 +1,6 @@
+import Blowfish from 'blowfish-node'
+import { Base64 } from 'js-base64';
+
 const githubPath = 'https://raw.githubusercontent.com/wjhuang88/zone-articles/master'
 const giteePath = 'https://gitee.com/wjhuang88/zone-articles/raw/master'
 
@@ -46,3 +49,15 @@ export const LOADING_ICON_BASE64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
   "nLBuEHHbEzTLX8OUsWD+SqAlUOKcYWfmwatFm7SoTCENo6rzBzyQoASxdqQYI5Rw1IeYVxhCOupyE8BrIozyCTuGrghyctVRW2y5msNWJHPejWx" +
   "pGi3RqCH2XDaIkUXa1YE+JAFQm+E6TD4jNkZLjOPQDDHO0YKYOxhyHeZ5wEs9DFlcHyJRAfjtBHkhrGLMMYKIDGT5tg/PoKMGPmqzS3k7mVrfjb" +
   "CwxvBRu4iz3MnwCx35GbSn7uTydILkUkHAcYop4wgd7icu9Dr/wOViw2Y5qUNzwAAAABJRU5ErkJggg=="
+
+const BLOWFISH = new Blowfish('*oJL9U()PeOh,MZy', Blowfish.MODE.ECB, Blowfish.PADDING.NULL);
+BLOWFISH.setIv('BeH.8@.u');
+
+export function proxyEncode(src) {
+  return Base64.fromUint8Array(BLOWFISH.encode(src), true)
+}
+
+export function proxyDecode(src) {
+  const br = Base64.toUint8Array(src)
+  return BLOWFISH.decode(br, Blowfish.TYPE.STRING)
+}

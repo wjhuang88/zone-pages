@@ -153,6 +153,11 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz#f6e14a97858d327252200242d4ccfe522c445522"
   integrity sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==
 
+blowfish-node@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npmjs.org/blowfish-node/-/blowfish-node-1.1.4.tgz#37bfe62a08f6d6026407399ad214c44d5bb4e01f"
+  integrity sha512-Iahpxc/cutT0M0tgwV5goklB+EzDuiYLgwJg050AmUG2jSIOpViWMLdnRgBxzZuNfswAgHSUiIdvmNdgL2v6DA==
+
 boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -513,6 +518,11 @@ jinrishici@^1.0.6:
   version "1.0.6"
   resolved "https://registry.npmjs.org/jinrishici/-/jinrishici-1.0.6.tgz#1f3e1259de5e889ce1bab00f118248c7c346bd98"
   integrity sha512-4Bk5VHo6xg9DspGS8y8I7D6kftA6DYy4rSvwpdtxFvh9DidXMgf+NSZKAXrcLTi8S5NjqmwkpAKYPHXRURH64Q==
+
+js-base64@^3.7.7:
+  version "3.7.7"
+  resolved "https://registry.npmjs.org/js-base64/-/js-base64-3.7.7.tgz#e51b84bf78fbf5702b9541e2cb7bfcb893b43e79"
+  integrity sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
@@ -1285,11 +1295,6 @@ styled-jsx@5.1.1:
   integrity sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==
   dependencies:
     client-only "0.0.1"
-
-supports-color@^9.4.0:
-  version "9.4.0"
-  resolved "https://registry.npmjs.org/supports-color/-/supports-color-9.4.0.tgz#17bfcf686288f531db3dea3215510621ccb55954"
-  integrity sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
