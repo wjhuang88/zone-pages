@@ -1,7 +1,8 @@
 import Motto from './motto'
+import FloatPanel from './float-panel'
+import BackTop from './backtop'
 
 import styles from './Aside.module.scss'
-import FloatPanel from './float-panel'
 
 import { getLatestList, getRecommendList } from '@/apis'
 
@@ -16,6 +17,7 @@ export default async function Aside() {
     <aside className={styles.aside}>
       <Motto speed={baseDuration} />
       <FloatPanel speed={baseDuration} recommendPosts={recommend} latestPosts={latest} />
+      <BackTop />
     </aside>
   )
 }
