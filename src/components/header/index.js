@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
+import { MenuIcon } from '@components'
 import LogoBlock from './logo-block'
 import NavBlock from './nav-block'
 
@@ -22,6 +23,7 @@ export default function PageHeader() {
     <header className={styles.header}>
       <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
+        <MenuIcon className={styles.menu} color={styles.barColor} />
         <ul>
           {navList.map((item, index) =>
             <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />

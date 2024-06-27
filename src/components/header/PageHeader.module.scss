@@ -1,5 +1,7 @@
 @import 'logo-block';
 @import 'nav-block';
+@import '../../styles/commons';
+@import '../../styles/colors';
 
 @mixin flex-common {
   display: flex;
@@ -7,21 +9,66 @@
   align-items: center;
 }
 
+.menu {
+  @media screen and (min-width: $width-max-aside) {
+    display: none;
+  }
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 99999;
+  background-color: $bg-color;
+  border: 1px solid $normal-border-color {
+    radius: 10px 2px 10px 2px;
+  }
+  transition: background-color .3s;
+  &:hover {
+    background-color: $bg-hover-color;
+  }
+}
+
 .header {
   @include flex-common;
   justify-content: space-between;
-  height: 56px;
-  width: 1024px;
-  margin: 24px auto 0 auto;
+  height: 80px;
+  width: $width-frame;
+  margin: 0 auto 0;
+  padding: 24px 0 0;
+  @media screen and (max-width: $width-max-aside) {
+    width: $width-main;
+  }
+  @media screen and (max-width: $width-just-min) {
+    width: 100%;
+    min-width: $width-fix-min;
+  }
 }
 
 .nav > ul {
   @include flex-common;
-  justify-content: right;
+  justify-content: flex-end;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  li:not(:nth-child(1)) {
-    margin: 0 0 0 5px;
+  @media screen and (min-width: $width-max-aside) {
+    li+li {
+      margin: 0 0 0 5px;
+    }
+  }
+  @media screen and (max-width: $width-max-aside) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 10px;
+    background-color: $bg-color;
+    li {
+      width: 100%;
+      &:nth-child(1) {
+        margin-top: 64px;
+      }
+    }
   }
 }

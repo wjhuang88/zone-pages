@@ -1,3 +1,5 @@
+"use client";
+
 export function EyeIcon({ value, style }) {
   return (
     <span style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
@@ -19,7 +21,7 @@ export function EyeIcon({ value, style }) {
       </svg>
       <span style={{ marginLeft: 4 }}>{value}</span>
     </span>
-  );
+  )
 }
 
 export function HeartIcon({ value, style }) {
@@ -43,7 +45,7 @@ export function HeartIcon({ value, style }) {
       </svg>
       <span style={{ marginLeft: 2 }}>{value}</span>
     </span>
-  );
+  )
 }
 
 export function MessageIcon({ value, style }) {
@@ -72,7 +74,7 @@ export function MessageIcon({ value, style }) {
       </svg>
       <span style={{ marginLeft: 3 }}>{value}</span>
     </span>
-  );
+  )
 }
 
 export function TagIcon({ value, style }) {
@@ -96,5 +98,24 @@ export function TagIcon({ value, style }) {
       </svg>
       <span style={{ marginLeft: 2 }}>{value}</span>
     </span>
-  );
+  )
+}
+
+export function MenuIcon({ className, color }) {
+
+  const barStyle = {
+    display: "block",
+    width: "22px",
+    height: "2px",
+    borderRadius: "1px",
+    backgroundColor: color
+  }
+
+  return (
+    <div className={className} style={{width: '53px', height: '53px'}}>
+      <span style={barStyle}></span>
+      <span style={{ ...barStyle, marginTop: '4px' }}></span>
+      <span style={{ ...barStyle, marginTop: '4px' }}></span>
+    </div>
+  )
 }
