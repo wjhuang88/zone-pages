@@ -100,22 +100,3 @@ export function TagIcon({ value, style }) {
     </span>
   )
 }
-
-export function MenuIcon({ className, color }) {
-
-  const barStyle = {
-    display: "block",
-    width: "22px",
-    height: "2px",
-    borderRadius: "1px",
-    backgroundColor: color
-  }
-
-  return (
-    <div className={className} style={{width: '53px', height: '53px'}}>
-      <span style={barStyle}></span>
-      <span style={{ ...barStyle, marginTop: '4px' }}></span>
-      <span style={{ ...barStyle, marginTop: '4px' }}></span>
-    </div>
-  )
-}

@@ -1,11 +1,12 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { MenuIcon } from '@components'
 import LogoBlock from './logo-block'
 import NavBlock from './nav-block'
+import { MenuIcon } from './menu-button'
 
 import styles from './PageHeader.module.scss'
+import { useState } from 'react'
 
 export default function PageHeader() {
 
@@ -19,12 +20,14 @@ export default function PageHeader() {
     { id: 4, title: '关于我', subtitle: 'ABOUT', href: '/about'},
   ]
 
+  const [opened, setOpened] = useState(false)
+
   return (
     <header className={styles.header}>
       <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
-        <MenuIcon className={styles.menu} color={styles.barColor} />
-        <ul>
+        <MenuIcon opened={opened} onClick={() => setOpened(!opened)} />
+        <ul style={opened ? { display: "block" } : { display: "none" }}>
           {navList.map((item, index) =>
             <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
           )}
