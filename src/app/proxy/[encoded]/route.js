@@ -10,10 +10,12 @@ const fetchImage = (img, headers) => {
   } else {
     imgPath = new URL(`${CONTENT_BASE}/${img}`)
   }
-  return fetch(imgPath, { headers: { ...headers, host: imgPath.host } })
+  headers.set('host', imgPath.host)
+  headers.delete('referer')
+  return fetch(imgPath, { headers })
 }
 
-export async function GET({ headers }, { params }) {
+export function GET({ headers }, { params }) {
   const realPath = decode(params.encoded)
-  return await fetchImage(realPath, headers)
+  return fetchImage(realPath, headers)
 }
