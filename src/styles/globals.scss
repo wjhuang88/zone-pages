@@ -59,4 +59,8 @@ a {
 .main {
   @include flex-common(-999, $width-main);
   flex-basis: $width-main;
+  @media screen and (max-width: $width-just-min) {
+    width: 100%;
+    flex-basis: 100%;
+  }
 }

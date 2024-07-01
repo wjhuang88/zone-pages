@@ -20,7 +20,7 @@
   width: 100%;
   animation: init-post .4s;
   img {
-    max-width: 600px;
+    max-width: 100%;
   }
   h1 {
     @include art-head(24px);
