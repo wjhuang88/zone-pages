@@ -1,6 +1,7 @@
 $common-font: -apple-system, SF UI Display, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
-$width-frame: 1024px;
-$width-main: 684px;
-$width-max-aside: 1060px;
-$width-just-min: 730px;
-$width-fix-min: 613px;
+$width-frame: 1024px; // 页面整体宽度
+$width-main: 684px; // 左侧主要部分宽度
+$width-max-aside: 1060px; // 隐藏边栏最大窗口宽度
+$width-just-min: 730px; // 响应式变化触发点
+$width-fix-min: 613px; // 页面整体最小宽度
+$width-max-widget: 1250px; // 页面小挂件最大窗口宽度

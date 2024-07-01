@@ -21,9 +21,8 @@ export default async function Page({ params }) {
     <article className={styles.article}>
       <h1 className={styles.title}>{postData.title}</h1>
       <div className={styles.subtitle}>
-        <span>发表于&nbsp;{postData.create_time}</span>
+        <span>发表于&nbsp;{postData.createTime}</span>
         <span>字数&nbsp;{postData.size}</span>
-        <span>阅读&nbsp;{postData.read_count}</span>
         <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
       </div>
       {postData.compomnents}

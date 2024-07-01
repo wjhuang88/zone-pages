@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'commons';
 
 .postList {
   z-index: -99;
@@ -42,8 +43,11 @@
   position: relative;
   z-index: 1;
   display: block;
-  width: 150px;
   height: 100px;
+  width: 150px;
+  @media screen and (max-width: ($width-fix-min + 40px)) {
+    width: 120px;
+  }
   flex: 0 0 auto;
   background: {
     repeat: no-repeat;
@@ -98,7 +102,7 @@
   margin: 0 0 0 20px;
 }
 
-.time {
+.datetime {
   font-style: italic;
 }
 

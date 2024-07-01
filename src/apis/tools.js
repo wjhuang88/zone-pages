@@ -4,17 +4,19 @@ import moment from 'dayjs'
 import { proxyEncode } from '@/common-config'
 
 export function createMeta(data, catPath, excerpt) {
+  const tags = Array.isArray(data.tags) ? data.tags : ['无分类']
+  const createMoment = moment(data.date)
+  const updateMoment = moment(data.update)
   return {
     id: data.path?.replace(/\.md$/g, ''),
     title: data.title,
-    create_time: moment(data.date).format('YYYY-MM-DD HH:mm'),
-    update_time: moment(data.update).format('YYYY-MM-DD HH:mm'),
+    createTime: createMoment.format('YYYY-MM-DD HH:mm'),
+    createDate: createMoment.format('YYYY-MM-DD'),
+    updateTime: updateMoment.format('YYYY-MM-DD HH:mm'),
+    updateDate: updateMoment.format('YYYY-MM-DD'),
     bref: data.summary ?? excerpt,
     parent: catPath,
-    tag_id: 888,
-    like_count: 20,
-    commet_count: 30,
-    read_count: 10,
+    tags,
   }
 }
 

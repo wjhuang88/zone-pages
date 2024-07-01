@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { EyeIcon, HeartIcon, MessageIcon, TagIcon } from '../icons'
+import { EyeIcon, MessageIcon, TagIcon } from '../icons'
 import styles from './PostList.module.scss'
 
 export default function PostListItem({ meta, sort }) {
@@ -9,7 +9,8 @@ export default function PostListItem({ meta, sort }) {
   const cat = meta.parent
   const title = meta.title
   const des = meta.bref
-  const date = meta.create_time
+  const date = meta.createTime
+  const tags = Array.isArray(meta.tags) ? meta.tags.join('/') : ''
 
   const animDuration = Math.min((sort / 8) + 0.6, 2)
 
@@ -24,11 +25,10 @@ export default function PostListItem({ meta, sort }) {
         </Link>
         <p className={styles.des}>{des}</p>
         <div className={styles.footer}>
-          <span className={styles.time}>发表于 {date}</span>
-          <MessageIcon style={{ marginLeft: 15 }} value="999" />
-          <EyeIcon style={{ marginLeft: 15 }} value="99,999" />
-          <HeartIcon style={{ marginLeft: 15 }} value="999" />
-          <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
+          <span className={styles.datetime}>发表于 {date}</span>
+          <MessageIcon style={{ marginLeft: 15 }} value="0" /> {/*recommend*/}
+          <EyeIcon style={{ marginLeft: 15 }} value="0" /> {/*read*/}
+          <TagIcon style={{ marginLeft: 15 }} value={tags} /> {/*tags*/}
         </div>
       </div>
     </li>
