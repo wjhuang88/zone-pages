@@ -1,6 +1,6 @@
-export function EyeIcon({ value, style }) {
+export function EyeIcon({ value, style, className }) {
   return (
-    <span style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
+    <span className={className} style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
       <svg
         t="1601108913211"
         className="icon"
@@ -22,9 +22,9 @@ export function EyeIcon({ value, style }) {
   )
 }
 
-export function HeartIcon({ value, style }) {
+export function HeartIcon({ value, style, className }) {
   return (
-    <span style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
+    <span className={className} style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
       <svg
         t="1601108165944"
         className="icon"
@@ -46,9 +46,9 @@ export function HeartIcon({ value, style }) {
   )
 }
 
-export function MessageIcon({ value, style }) {
+export function MessageIcon({ value, style, className }) {
   return (
-    <span style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
+    <span className={className} style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
       <svg
         t="1601109896302"
         className="icon"
@@ -75,9 +75,9 @@ export function MessageIcon({ value, style }) {
   )
 }
 
-export function TagIcon({ value, style }) {
+export function TagIcon({ value, style, className }) {
   return (
-    <span style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
+    <span className={className} style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
       <svg
         t="1601111091728"
         className="icon"

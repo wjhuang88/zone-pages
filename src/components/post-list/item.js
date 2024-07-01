@@ -10,6 +10,7 @@ export default function PostListItem({ meta, sort }) {
   const title = meta.title
   const des = meta.bref
   const date = meta.createTime
+  const shortDate = meta.createDate
   const tags = Array.isArray(meta.tags) ? meta.tags.join('/') : ''
 
   const animDuration = Math.min((sort / 8) + 0.6, 2)
@@ -26,9 +27,10 @@ export default function PostListItem({ meta, sort }) {
         <p className={styles.des}>{des}</p>
         <div className={styles.footer}>
           <span className={styles.datetime}>发表于 {date}</span>
-          <MessageIcon style={{ marginLeft: 15 }} value="0" /> {/*recommend*/}
-          <EyeIcon style={{ marginLeft: 15 }} value="0" /> {/*read*/}
-          <TagIcon style={{ marginLeft: 15 }} value={tags} /> {/*tags*/}
+          <span className={styles.shortdate}>发表于 {shortDate}</span>
+          <MessageIcon className={styles.iconItem} value="0" /> {/*recommend*/}
+          <EyeIcon className={styles.iconItem} value="0" /> {/*read*/}
+          <TagIcon className={styles.iconItem} value={tags} /> {/*tags*/}
         </div>
       </div>
     </li>
