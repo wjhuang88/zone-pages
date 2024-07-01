@@ -27,9 +27,16 @@ export default function PageHeader() {
       <LogoBlock key={'logo-block'} />
       <nav className={styles.nav}>
         <MenuIcon opened={opened} onClick={() => setOpened(!opened)} />
-        <ul style={opened ? { display: "block" } : { display: "none" }}>
+        <ul className={opened ? styles.opened : styles.closed}>
           {navList.map((item, index) =>
-            <NavBlock key={item.id} sort={index} title={item.title} subtitle={item.subtitle} href={item.href} selected={selectedHref === item.href} />
+            <NavBlock
+              key={item.id}
+              sort={index}
+              title={item.title}
+              subtitle={item.subtitle}
+              href={item.href}
+              selected={selectedHref === item.href}
+            />
           )}
         </ul>
       </nav>

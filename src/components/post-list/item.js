@@ -17,11 +17,11 @@ export default function PostListItem({ meta, sort }) {
 
   return (
     <li className={styles.postItem} style={{ animationDuration: animDuration + 's' }}>
-      <Link key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.postImage}>
+      <Link prefetch={false} key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.postImage}>
         <div style={{ backgroundImage: `url(${image})` }} />
       </Link>
       <div className={styles.postBlock}>
-        <Link key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.title}>
+        <Link prefetch={false} key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.title}>
           {title}
         </Link>
         <p className={styles.des}>{des}</p>

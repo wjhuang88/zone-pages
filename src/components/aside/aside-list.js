@@ -24,7 +24,7 @@ export default function AsideList({ posts }) {
       {posts?.map((item, index) => (
         <li style={{marginTop: index !== 0 ? 8 : 0}} key={index}>
           {icon}
-          <Link href="/posts/[cat]/[path]" as={`/posts/${item.parent}/${item.id}`} className={styles.link}>
+          <Link prefetch={false} href="/posts/[cat]/[path]" as={`/posts/${item.parent}/${item.id}`} className={styles.link}>
             {item.title}
           </Link>
         </li>

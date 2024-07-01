@@ -35,21 +35,23 @@
     }
   }
   @media screen and (max-width: $width-max-aside) {
+    &.opened {
+      display: block;
+    }
+    &.closed {
+      display: none;
+    }
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100vw;
-    height: 100vh;
     padding: 0 10px;
+    margin-top: $menu-top + $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2 + 3px;
     background-color: $bg-color;
     animation: mobile-nav-in .5s;
     li {
       width: 100%;
-      &:nth-child(1) {
-        margin-top: $menu-top + $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2 + 3px;
-      }
     }
   }
 }
