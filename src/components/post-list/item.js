@@ -24,7 +24,7 @@ export default function PostListItem({ meta, sort }) {
         <Link prefetch={false} key={`post-${cat}-${path}`} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`} className={styles.title}>
           {title}
         </Link>
-        <p className={styles.des}>{des}</p>
+        <Link prefetch={false} className={styles.des} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`}>{des}</Link>
         <div className={styles.footer}>
           <span className={styles.datetime}>发表于 {date}</span>
           <span className={styles.shortdate}>发表于 {shortDate}</span>
