@@ -13,7 +13,7 @@ $menu-right: 10px;
     display: none;
   }
 
-  position: absolute;
+  position: fixed;
   top: $menu-top;
   right: $menu-right;
   z-index: 99999;
