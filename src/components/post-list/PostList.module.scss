@@ -115,6 +115,7 @@ $top-gap: 40px;
 .postBlock {
   z-index: 1;
   margin: 0 0 0 20px;
+  width: 100%;
   @media screen and (max-width: $change-point) {
     margin: 0 0 0 10px;
   }
@@ -123,7 +124,9 @@ $top-gap: 40px;
 .iconItem {
   margin-left: 15px;
   @media screen and (max-width: $change-point) {
-    margin-left: 8px;
+    &+.iconItem {
+      margin-left: 8px;
+    }
   }
 }
 

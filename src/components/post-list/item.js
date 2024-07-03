@@ -27,7 +27,7 @@ export default function PostListItem({ meta, sort }) {
         <Link prefetch={false} className={styles.des} href="/posts/[cat]/[path]" as={`/posts/${cat}/${path}`}>{des}</Link>
         <div className={styles.footer}>
           <span className={styles.datetime}>发表于 {date}</span>
-          <span className={styles.shortdate}>发表于 {shortDate}</span>
+          <span className={styles.shortdate}>{shortDate}</span>
           <MessageIcon className={styles.iconItem} value="0" /> {/*recommend*/}
           <EyeIcon className={styles.iconItem} value="0" /> {/*read*/}
           <TagIcon className={styles.iconItem} value={tags} /> {/*tags*/}
