@@ -5,15 +5,15 @@ $bar-width: 24px;
 $bar-height: 2px;
 $bar-gap: 5px;
 $menu-padding: 10px;
-$menu-top: 10px;
-$menu-right: 10px;
+$menu-top: 24px;
+$menu-right: 20px;
 
 .menuBtn {
   @media screen and (min-width: $width-max-aside) {
     display: none;
   }
 
-  position: fixed;
+  position: absolute;
   top: $menu-top;
   right: $menu-right;
   z-index: 99999;

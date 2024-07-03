@@ -1,15 +1,26 @@
 @import 'colors';
+@import 'commons';
+
+$logo-width: 220px;
+$logo-width-short: auto;
 
 .container {
   display: block;
   border-left: 4px solid $normal-border-color;
   padding: 0 10px;
   animation: init 1.2s;
+  @media screen and (max-width: $width-max-aside) {
+    width: 100%;
+    padding: 0 0 10px;
+    text-align: left;
+    border-left: none;
+    border-bottom: 1px solid $normal-text-color;
+  }
 }
 
 .title {
   margin: 0;
-  width: 220px;
+  width: $logo-width;
   font: {
     size: 22px;
     weight: 300;
@@ -17,14 +28,22 @@
   color: $fg-color;
   text-align: left;
   user-select: none;
-  background: url('/assets/title-cat.webp') no-repeat {
-    size: 100px;
-    position: 160px 0;
-  }
-  transition: background-position .3s cubic-bezier(0.68,-0.6,0.32,1.6);
   animation: init-title 1.2s;
-  .container:hover>& {
-    background-position: 140px -20px;
+  @media screen and (min-width: $width-max-aside) {
+    background: url('/assets/title-cat.webp') no-repeat {
+      size: 100px;
+      position: 160px 0;
+    }
+    transition: background-position .3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    .container:hover>& {
+      background-position: 140px -20px;
+    }
+  }
+  @media screen and (max-width: $width-max-aside) {
+    display: inline-block;
+    text-align: center;
+    width: $logo-width-short;
+    margin: 0 auto;
   }
 }
 
@@ -40,7 +59,7 @@
 
 .subtitle {
   padding-top: 4px;
-  width: 220px;
+  width: $logo-width;
   height: 25px;
   font: {
     style: italic;
@@ -52,6 +71,20 @@
   border-top: 1px solid $normal-text-color;
   user-select: none;
   animation: init-subtitle 1.2s;
+  @media screen and (max-width: $width-max-aside) {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    width: $logo-width-short;
+    margin: 0 auto;
+    border-top: none;
+    &::before {
+      content: "/";
+      display: inline-block;
+      width: 20px;
+    }
+  }
 }
 
 @keyframes init {

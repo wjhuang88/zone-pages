@@ -2,13 +2,18 @@
 @import 'commons';
 
 $change-point: ($width-fix-min + 40px);
+$item-gap: 30px;
+$top-gap: 40px;
 
 .postList {
   z-index: -99;
-  margin: 40px 0 0 0;
+  margin: $top-gap 0 0 0;
   padding: 0;
   list-style: none;
   flex: 1;
+  @media screen and (max-width: $change-point) {
+    margin: 20px 0 0 0;
+  }
 }
 
 .postItem {
@@ -22,9 +27,15 @@ $change-point: ($width-fix-min + 40px);
   margin: 0;
   border-bottom: 1px solid $fade-border-color;
   animation: item-in 0.5s ease-in-out;
-  padding: 30px 2px 30px 0;
-  &:nth-child(1) {
-    padding: 0 2px 30px 0;
+  padding: 0 2px $item-gap 0;
+  &+.postItem {
+    padding: $item-gap 2px $item-gap 0;
+  }
+  @media screen and (max-width: $change-point) {
+    padding: 0 2px calc($item-gap * 0.7) 0;
+    &+.postItem {
+      padding: calc($item-gap * 0.7) 2px calc($item-gap * 0.7) 0;
+    }
   }
 }
 
