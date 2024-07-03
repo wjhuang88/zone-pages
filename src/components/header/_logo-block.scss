@@ -15,6 +15,7 @@ $logo-width-short: auto;
     text-align: left;
     border-left: none;
     border-bottom: 1px solid $normal-text-color;
+    animation: init-mobile 1.2s;
   }
 }
 
@@ -116,6 +117,24 @@ $logo-width-short: auto;
 }
 
 @keyframes init-subtitle {
+  0% {
+    opacity: 0;
+    border-color: $bg-color;
+    transform: translateX(-200px);
+  }
+
+  70% {
+    border-color: $bg-color;
+  }
+
+  100% {
+    opacity: 1;
+    border-color: $normal-text-color;
+    transform: translateX(0);
+  }
+}
+
+@keyframes init-mobile {
   0% {
     opacity: 0;
     border-color: $bg-color;
