@@ -112,20 +112,15 @@
     }
   }
   pre {
-    max-width: 100%;
-    padding: 0;
+    width: calc(100% + 1px);
     font-size: 12px;
     margin-bottom: 20px;
-    word-break: break-word;
+    padding: 1em;
+    overflow-x: auto;
     overflow-wrap: break-word;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    word-break: break-word;
     white-space: nowrap;
     &[class*="language-"] {
-      code {
-        display: inline-block;
-        padding: 1em;
-      }
       border: 1px solid rgba($code-bg-color, 0.9) {
         radius: 12px;
       }
