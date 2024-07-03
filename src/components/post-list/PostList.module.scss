@@ -12,7 +12,7 @@ $top-gap: 40px;
   list-style: none;
   flex: 1;
   @media screen and (max-width: $change-point) {
-    margin: 20px 0 0 0;
+    margin: 24px 0 0 0;
   }
 }
 
@@ -60,6 +60,7 @@ $top-gap: 40px;
   width: 150px;
   border-radius: 14px;
   @media screen and (max-width: $change-point) {
+    height: 90px;
     width: 120px;
     border-radius: 8px;
   }
