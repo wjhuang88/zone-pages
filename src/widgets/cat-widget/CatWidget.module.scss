@@ -3,6 +3,7 @@
 @media screen and (min-width: $width-max-widget) {
 .container {
   position: fixed;
+  z-index: $highest-layer;
   bottom: 0;
   left: 5px;
   display: block;

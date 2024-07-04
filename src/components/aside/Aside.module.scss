@@ -64,7 +64,7 @@
   bottom: 20px;
   width: 90%;
   height: 20%;
-  z-index: $layer-4;
+  z-index: -1;
   box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity 0.2s;
