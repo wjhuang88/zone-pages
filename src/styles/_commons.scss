@@ -5,3 +5,15 @@ $width-max-aside: 1060px; // 隐藏边栏最大窗口宽度
 $width-just-min: 730px; // 响应式变化触发点
 $width-fix-min: 613px; // 页面整体最小宽度
 $width-max-widget: 1250px; // 页面小挂件最大窗口宽度
+
+// z-index层级定义
+$lowest-layer: 0;
+$layer-1: 1000;
+$layer-2: 2000;
+$layer-3: 3000;
+$layer-4: 3100;
+$layer-5: 3200;
+$layer-6: 3300;
+$layer-7: 3310;
+$layer-8: 3320;
+$highest-layer: 99999;

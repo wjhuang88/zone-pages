@@ -25,7 +25,7 @@ html,
 body {
   background: $bg-color;
   position: relative;
-  z-index: -99999;
+  z-index: $lowest-layer;
   padding: 0;
   margin: 0;
   min-height: 900px;
@@ -46,7 +46,7 @@ a {
 }
 
 .page-wrap {
-  @include flex-common(-9999, $width-frame);
+  @include flex-common($layer-1, $width-frame);
   margin: 0 auto;
   @media screen and (max-width: $width-max-aside) {
     width: $width-main;
@@ -57,7 +57,7 @@ a {
 }
 
 .main {
-  @include flex-common(-999, $width-main);
+  @include flex-common($layer-2, $width-main);
   flex-basis: $width-main;
   @media screen and (max-width: $width-just-min) {
     width: 100%;

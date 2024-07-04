@@ -16,7 +16,7 @@ $menu-right: 20px;
   position: absolute;
   top: $menu-top;
   right: $menu-right;
-  z-index: 99999;
+  z-index: $highest-layer;
   background-color: $bg-color;
   padding: $menu-padding;
 

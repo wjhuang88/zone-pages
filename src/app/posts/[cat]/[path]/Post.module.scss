@@ -19,6 +19,7 @@
   margin-top: 40px;
   width: 100%;
   animation: init-post .4s;
+  overflow: hidden;
   img {
     max-width: 100%;
   }
@@ -50,7 +51,6 @@
       margin: 0;
       padding: 2px 6px;
       border-radius: 6px;
-      white-space: normal;
       vertical-align: text-top;
       font: {
         size: 85%;
@@ -112,14 +112,11 @@
     }
   }
   pre {
-    width: calc(100% + 1px);
+    width: 100%;
     font-size: 12px;
     margin-bottom: 20px;
     padding: 1em;
-    overflow-x: auto;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    white-space: nowrap;
+    overflow: auto;
     &[class*="language-"] {
       border: 1px solid rgba($code-bg-color, 0.9) {
         radius: 12px;
