@@ -1,16 +1,18 @@
 @import 'commons';
 
-@media screen and (min-width: $width-max-widget) {
 .container {
+  display: none;
   position: fixed;
   z-index: $highest-layer;
   top: 0;
   right: 0;
-  display: block;
   width: 120px;
   height: 225px;
   animation: main-swing 10s infinite;
   transform-origin: 50% 0;
+  @media screen and (min-width: $width-max-widget) {
+    display: block;
+  }
 }
 .head {
   position: absolute;
@@ -58,5 +60,4 @@
   100% {
     transform: rotate(6deg);
   }
-}
 }

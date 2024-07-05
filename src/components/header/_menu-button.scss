@@ -1,13 +1,6 @@
 @import 'colors';
 @import 'commons';
 
-$bar-width: 24px;
-$bar-height: 2px;
-$bar-gap: 5px;
-$menu-padding: 10px;
-$menu-top: 24px;
-$menu-right: 20px;
-
 .menuBtn {
   @media screen and (min-width: $width-max-aside) {
     display: none;

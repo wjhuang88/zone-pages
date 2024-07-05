@@ -8,7 +8,9 @@ $logo-width-short: auto;
   display: block;
   border-left: 4px solid $normal-border-color;
   padding: 0 10px;
-  animation: init 1.2s;
+  @media screen and (min-width: $width-max-aside) {
+    animation: init 1.2s;
+  }
   @media screen and (max-width: $width-max-aside) {
     width: 100%;
     padding: 0 0 20px;
@@ -29,8 +31,8 @@ $logo-width-short: auto;
   color: $fg-color;
   text-align: left;
   user-select: none;
-  animation: init-title 1.2s;
   @media screen and (min-width: $width-max-aside) {
+    animation: init-title 1.2s;
     background: url('/assets/title-cat.webp') no-repeat {
       size: 100px;
       position: 160px 0;
@@ -68,7 +70,9 @@ $logo-width-short: auto;
   text-align: right;
   border-top: 1px solid $normal-text-color;
   user-select: none;
-  animation: init-subtitle 1.2s;
+  @media screen and (min-width: $width-max-aside) {
+    animation: init-subtitle 1.2s;
+  }
   @media screen and (max-width: $width-max-aside) {
     display: inline-block;
     text-align: center;
@@ -132,11 +136,7 @@ $logo-width-short: auto;
   0% {
     opacity: 0;
     border-color: $bg-color;
-    transform: translateX(-200px);
-  }
-
-  70% {
-    border-color: $bg-color;
+    transform: translateX(0);
   }
 
   100% {

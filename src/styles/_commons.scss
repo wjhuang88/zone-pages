@@ -6,7 +6,15 @@ $width-just-min: 730px; // 响应式变化触发点
 $width-fix-min: 613px; // 页面整体最小宽度
 $width-max-widget: 1250px; // 页面小挂件最大窗口宽度
 
-$footer-height: 120px; // 页脚大小
+// 移动端菜单开关按钮位置参数
+$bar-width: 24px;
+$bar-height: 2px;
+$bar-gap: 5px;
+$menu-padding: 10px;
+$menu-top: 24px;
+$menu-right: 20px;
+
+$footer-height: 100px; // 页脚大小
 
 // z-index层级定义
 $lowest-layer: 0;
