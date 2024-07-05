@@ -52,12 +52,12 @@
 @keyframes tail-swing {
 
   0% {
-    transform: rotate(6deg);
+    transform: rotateZ(8deg) rotateY(-25deg);
   }
   50% {
-    transform: rotate(-8deg);
+    transform: rotateZ(0deg) rotateY(10deg);
   }
   100% {
-    transform: rotate(6deg);
+    transform: rotateZ(8deg) rotateY(-25deg);
   }
 }

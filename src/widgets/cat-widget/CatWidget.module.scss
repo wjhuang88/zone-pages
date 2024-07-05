@@ -10,7 +10,9 @@
   height: 120px;
   background: transparent url('/assets/cat.png') no-repeat 0/120px;
   transform-origin: 50% 100%;
-  animation: amin 2s ease-in-out infinite;
+  &:not(.pressed) {
+    animation: amin 2s ease-in-out infinite;
+  }
   @media screen and (min-width: $width-max-widget) {
     display: block;
   }
@@ -23,6 +25,10 @@
     top: $menu-top - 15px;
     left: $menu-right;
   }
+}
+
+.pressed {
+  transform: scaleY(0.9);
 }
 
 @keyframes amin {
