@@ -1,5 +1,5 @@
 import localFont from 'next/font/local'
-import { PageHeader, Aside } from '@components'
+import { PageHeader, Aside, PageFooter } from '@components'
 import { DEFAULT_TITLE } from '@/common-config'
 import WindbellWidget from '@widgets/windbell-widget'
 import CatWidget from '@widgets/cat-widget'
@@ -26,6 +26,7 @@ export default async function RootLayout({ children }) {
           <main className="main">{children}</main>
           <Aside />
         </div>
+        <PageFooter />
         <WindbellWidget />
         <CatWidget />
       </body>

@@ -1,0 +1,52 @@
+@import 'commons';
+@import 'colors';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: $footer-height;
+  width: $width-frame;
+  margin: 0 auto 0;
+  background-color: $bg-color;
+  border-top: 1px solid $fade-border-color;
+  text-align: center;
+  @media screen and (max-width: $width-max-aside) {
+    width: $width-main;
+  }
+  
+  @media screen and (max-width: $width-just-min) {
+    width: 100%;
+  }
+}
+
+.iconRow {
+  margin-top: 10px;
+}
+
+.textLink {
+  color: $fg-color;
+  border-bottom: 1px solid $bg-color;
+  transition: color .3s, border-color .3s;
+
+  &:hover {
+    color: $fg-hover-color;
+    border-color: $fg-hover-color;
+  }
+}
+
+.github, .mail {
+  color: #1f23289d;
+  transition: color .3s;
+}
+
+.iconLink {
+  display: inline-block;
+  &:hover .github, &:hover .mail {
+    color: #1f2328ff;
+  }
+  &+.iconLink {
+    margin-left: 10px;
+  }
+}
