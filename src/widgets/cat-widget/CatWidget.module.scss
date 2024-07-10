@@ -13,11 +13,11 @@
   }
   @media screen and (max-width: $width-max-aside) {
     display: block;
-    width: 75px;
-    height: 75px;
+    width: 120px;
+    height: 120px;
     background-size: 60px;
     position: absolute;
-    top: $menu-top - 20px;
-    left: $menu-right;
+    top: $menu-top - 40px;
+    left: -10px;
   }
 }
