@@ -28,7 +28,6 @@ body {
   z-index: $lowest-layer;
   padding: 0;
   margin: 0;
-  min-height: 900px;
   font-size: 14px;
 }
 body {
@@ -49,6 +48,7 @@ a {
 .page-wrap {
   @include flex-common($layer-1, $width-frame);
   margin: 0 auto;
+  min-height: 600px;
   @media screen and (max-width: $width-max-aside) {
     width: $width-main;
   }

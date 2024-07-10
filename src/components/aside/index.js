@@ -16,7 +16,6 @@ export default async function Aside() {
     <aside className={styles.aside}>
       <Motto speed={baseDuration} />
       <FloatPanel speed={baseDuration} latestPosts={latest} />
-      <BackTop />
     </aside>
   )
 }

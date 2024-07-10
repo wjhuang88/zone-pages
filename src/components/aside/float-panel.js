@@ -16,6 +16,7 @@ const fixedStyle = {
 export default React.memo(function FloatPanel({ latestPosts, speed }) {
   // 是否进入固定侧边栏状态
   const [sideStyle, setSideStyle] = useState({})
+  const [showTips, setShowTips] = useState(false)
 
   let fixed = false;
   const scrollAction = e => {
@@ -23,9 +24,11 @@ export default React.memo(function FloatPanel({ latestPosts, speed }) {
     if (!fixed && offset >= 223) {
       fixed = true
       setSideStyle(fixedStyle)
+      setShowTips(true)
     } else if (fixed && offset < 223) {
       fixed = false
       setSideStyle({})
+      setShowTips(false)
     }
   }
 
@@ -42,5 +45,6 @@ export default React.memo(function FloatPanel({ latestPosts, speed }) {
       <h2>最新发表</h2>
       <AsideList posts={latestPosts} />
     </div>
+    <a style={{ display: showTips ? 'block' : 'none' }} className={styles.backtopBox} onClick={() => window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })}></a>
   </div>
 })
