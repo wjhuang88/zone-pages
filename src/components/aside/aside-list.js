@@ -1,5 +1,11 @@
+'use client';
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { LOADING_ICON_BASE64 } from '@config'
+
 import styles from './Aside.module.scss'
+import { usePathname } from 'next/navigation';
 
 const icon = (
   <svg
@@ -19,16 +25,45 @@ const icon = (
 
 export default function AsideList({ posts }) {
 
+  const [loading, setLoading] = useState({})
+  const selectedPath = usePathname()
+
+  useEffect(() => {
+    if (loading[selectedPath]) {
+      setLoading({})
+    }
+  }, [selectedPath])
+
+  const loadingStyle = {
+    background: `url('${LOADING_ICON_BASE64}') no-repeat center / contain`,
+    animation: 'rotate-icon infinite .6s steps(16)',
+    display: 'inline-block',
+    height: '1em',
+    width: '1em',
+    verticalAlign: 'text-top',
+    marginLeft: '0.3em'
+  }
+
+  function clickAction(realPath) {
+    const newLoading = {}
+    newLoading[realPath] = true
+    setLoading(newLoading)
+  }
+
   return (
     <ul className={styles.list}>
-      {posts?.map((item, index) => (
-        <li style={{marginTop: index !== 0 ? 8 : 0}} key={index}>
-          {icon}
-          <Link prefetch={false} href="/posts/[cat]/[path]" as={`/posts/${item.parent}/${item.id}`} className={styles.link}>
-            {item.title}
-          </Link>
-        </li>
-      ))}
+      {posts?.map((item, index) => {
+        const realPath = `/posts/${item.parent}/${item.id}`
+        return (
+          <li style={{ marginTop: index !== 0 ? 8 : 0 }} key={index}>
+            {icon}
+            <Link onClick={() => clickAction(realPath)} prefetch={false} href="/posts/[cat]/[path]" as={realPath} className={styles.link}>
+              {item.title}
+            </Link>
+            <span style={loading[realPath] && selectedPath !== realPath ? loadingStyle : {}}></span>
+          </li>
+        )
+      })}
     </ul>
   )
 }

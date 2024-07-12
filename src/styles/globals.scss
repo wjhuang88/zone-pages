@@ -65,3 +65,13 @@ a {
     flex-basis: 100%;
   }
 }
+
+@keyframes rotate-icon {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}

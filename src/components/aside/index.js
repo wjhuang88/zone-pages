@@ -1,6 +1,5 @@
 import Motto from './motto'
 import FloatPanel from './float-panel'
-import BackTop from './backtop'
 
 import styles from './Aside.module.scss'
 

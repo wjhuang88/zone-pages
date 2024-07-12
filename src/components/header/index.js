@@ -1,6 +1,5 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import LogoBlock from './logo-block'
 import NavBlock from './nav-block'
 import { MenuIcon } from './menu-button'
@@ -9,8 +8,6 @@ import styles from './PageHeader.module.scss'
 import { useState } from 'react'
 
 export default function PageHeader() {
-
-  const selectedHref = usePathname()
 
   const navList = [
     { id: 0, title: '首页', subtitle: 'HOME', href: '/'},
@@ -35,7 +32,6 @@ export default function PageHeader() {
               title={item.title}
               subtitle={item.subtitle}
               href={item.href}
-              selected={selectedHref === item.href}
             />
           )}
         </ul>

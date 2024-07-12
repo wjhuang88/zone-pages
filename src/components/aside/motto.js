@@ -13,7 +13,7 @@ const loadingStyle = {
   top: '0',
   left: '4.5em',
   background: `url('${LOADING_ICON_BASE64}') no-repeat center / contain`,
-  animation: `${styles['rotate-icon']} infinite .6s steps(16)`,
+  animation: 'rotate-icon infinite .6s steps(16)',
   display: 'block',
   height: '1em',
   width: '1em'
