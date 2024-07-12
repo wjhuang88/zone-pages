@@ -135,12 +135,20 @@ export class LAppView {
     const viewY: number = this.transformViewY(this._touchManager.getY());
 
     this._touchManager.touchesMoved(
-      pointX * window.devicePixelRatio,
-      pointY * window.devicePixelRatio
+      pointX,
+      pointY
     );
+    let finalX: number, finalY: number;
+    if (viewX < -2 || viewX > 2 || viewY < -2 || viewY > 2) {
+      finalX = 0;
+      finalY = 0;
+    } else {
+      finalX = viewX;
+      finalY = viewY;
+    }
 
     const live2DManager: LAppLive2DManager = LAppLive2DManager.getInstance();
-    live2DManager.onDrag(viewX, viewY);
+    live2DManager.onDrag(finalX, finalY);
   }
 
   /**

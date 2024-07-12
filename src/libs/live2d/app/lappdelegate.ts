@@ -16,6 +16,7 @@ import { canvas, gl } from './lappglmanager';
 
 export let s_instance: LAppDelegate = null;
 export let frameBuffer: WebGLFramebuffer = null;
+let running = false;
 
 /**
  * アプリケーションクラス。
@@ -70,9 +71,9 @@ export class LAppDelegate {
       canvas.addEventListener('touchcancel', onTouchCancel, { passive: true });
     } else {
       // マウス関連コールバック関数登録
-      canvas.addEventListener('mousedown', onClickBegan, { passive: true });
-      canvas.addEventListener('mousemove', onMouseMoved, { passive: true });
-      canvas.addEventListener('mouseup', onClickEnded, { passive: true });
+      window.addEventListener('mousedown', onClickBegan, { passive: true });
+      window.addEventListener('mousemove', onMouseMoved, { passive: true });
+      window.addEventListener('mouseup', onClickEnded, { passive: true });
     }
 
     // AppViewの初期化
@@ -108,6 +109,8 @@ export class LAppDelegate {
 
     // Cubism SDKの解放
     CubismFramework.dispose();
+
+    running = false;
   }
 
   /**
@@ -145,10 +148,13 @@ export class LAppDelegate {
       // 描画更新
       this._view.render();
 
+      running = true;
       // ループのために再帰呼び出し
       requestAnimationFrame(loop);
     };
-    loop();
+    if (!running) {
+      loop();
+    }
   }
 
   /**
@@ -296,16 +302,13 @@ function onClickBegan(e: MouseEvent): void {
  * マウスポインタが動いたら呼ばれる。
  */
 function onMouseMoved(e: MouseEvent): void {
-  if (!LAppDelegate.getInstance()._captured) {
-    return;
-  }
 
   if (!LAppDelegate.getInstance()._view) {
     LAppPal.printMessage('view notfound');
     return;
   }
 
-  const rect = (e.target as Element).getBoundingClientRect();
+  const rect = canvas.getBoundingClientRect();
   const posX: number = e.clientX - rect.left;
   const posY: number = e.clientY - rect.top;
 
@@ -350,9 +353,6 @@ function onTouchBegan(e: TouchEvent): void {
  * スワイプすると呼ばれる。
  */
 function onTouchMoved(e: TouchEvent): void {
-  if (!LAppDelegate.getInstance()._captured) {
-    return;
-  }
 
   if (!LAppDelegate.getInstance()._view) {
     LAppPal.printMessage('view notfound');

@@ -925,22 +925,22 @@ export class LAppModel extends CubismUserModel {
     this._userArea = new csmVector<csmRect>();
 
     this._idParamAngleX = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamAngleX
+      "PARAM_ANGLE_X"
     );
     this._idParamAngleY = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamAngleY
+      "PARAM_ANGLE_Y"
     );
     this._idParamAngleZ = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamAngleZ
+      "PARAM_ANGLE_Z"
     );
     this._idParamEyeBallX = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamEyeBallX
+      "PARAM_EYE_BALL_X"
     );
     this._idParamEyeBallY = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamEyeBallY
+      "PARAM_EYE_BALL_Y"
     );
     this._idParamBodyAngleX = CubismFramework.getIdManager().getId(
-      CubismDefaultParameterId.ParamBodyAngleX
+      "PARAM_BODY_ANGLE_X"
     );
 
     if (LAppDefine.MOCConsistencyValidationEnable) {

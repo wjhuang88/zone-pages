@@ -12,12 +12,6 @@
 			"Idle": [
 				{
 					"File": "motion/00_idle.motion3.json"
-				},
-				{
-					"File": "motion/04.motion3.json"
-				},
-				{
-					"File": "motion/08.motion3.json"
 				}
 			],
 			"Tap": [
@@ -38,6 +32,12 @@
 				},
 				{
 					"File": "motion/07.motion3.json"
+				},
+				{
+					"File": "motion/04.motion3.json"
+				},
+				{
+					"File": "motion/08.motion3.json"
 				}
 			]
 		}
