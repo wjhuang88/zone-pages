@@ -19,7 +19,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
 
   return (
-    <html className={quicksand.variable} lang="en">
+    <html className={quicksand.variable} lang="zh-Hans">
       <body className={styles.bodyFont}>
         <PageHeader />
         <div className='page-wrap'>

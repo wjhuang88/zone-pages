@@ -71,9 +71,9 @@ export class LAppDelegate {
       canvas.addEventListener('touchcancel', onTouchCancel, { passive: true });
     } else {
       // マウス関連コールバック関数登録
-      window.addEventListener('mousedown', onClickBegan, { passive: true });
+      canvas.addEventListener('mousedown', onClickBegan, { passive: true });
       window.addEventListener('mousemove', onMouseMoved, { passive: true });
-      window.addEventListener('mouseup', onClickEnded, { passive: true });
+      canvas.addEventListener('mouseup', onClickEnded, { passive: true });
     }
 
     // AppViewの初期化
@@ -117,10 +117,14 @@ export class LAppDelegate {
    * 実行処理。
    */
   public run(): void {
+    if (running) {
+      return;
+    }
+    running = true;
     // メインループ
     const loop = (): void => {
       // インスタンスの有無の確認
-      if (s_instance == null) {
+      if (s_instance == null || !running) {
         return;
       }
 
@@ -148,13 +152,10 @@ export class LAppDelegate {
       // 描画更新
       this._view.render();
 
-      running = true;
       // ループのために再帰呼び出し
       requestAnimationFrame(loop);
     };
-    if (!running) {
-      loop();
-    }
+    loop();
   }
 
   /**

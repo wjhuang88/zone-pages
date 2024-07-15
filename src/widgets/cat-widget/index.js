@@ -33,10 +33,14 @@ export default function CatWidget() {
       'beforeunload', () => Live2d.release(),
       { passive: true }
     )
-    return () => window.removeEventListener('resize', resizeAction)
+    return () => {
+      console.log("leave live2d")
+      window.removeEventListener('resize', resizeAction)
+    }
   })
 
   return <>
+    <div className={styles.preload}></div>
     <Script src="/assets/live2d/live2dcubismcore.min.js" strategy='beforeInteractive' />
     <div ref={parentElem} className={styles.container}>
       <canvas width={110} height={120} ref={canvasElem}></canvas>
