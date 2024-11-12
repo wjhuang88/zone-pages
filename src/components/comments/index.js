@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function GitalkPanel({ id }) {
   
-  function makeComponent() {
+  function makeComponent(id) {
     return <GitalkComponent options={{
       clientID: "Ov23li3B9TnYLEBmCaYP",
       clientSecret: "688f589de997cfad8a13ca00b57aaf29c8fbecef",
@@ -21,9 +21,9 @@ export default function GitalkPanel({ id }) {
     }} />
   }
 
-  let [comp, setComp] = useState(() => <div></div>)
+  let [comp, setComp] = useState(() => {})
 
-  useEffect(() => setComp(makeComponent()), [])
+  useEffect(() => setComp(makeComponent(id)), [id])
 
   return <div className={styles.gitalkWrap}>
     {comp}
