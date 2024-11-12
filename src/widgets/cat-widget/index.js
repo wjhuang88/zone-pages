@@ -40,7 +40,6 @@ export default function CatWidget() {
   })
 
   return <>
-    <div className={styles.preload}></div>
     <Script src="/assets/live2d/live2dcubismcore.min.js" strategy='beforeInteractive' />
     <div ref={parentElem} className={styles.container}>
       <canvas width={110} height={120} ref={canvasElem}></canvas>

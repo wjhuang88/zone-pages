@@ -29,7 +29,7 @@ export class LAppLive2DManager {
    */
   public static getInstance(): LAppLive2DManager {
     if (s_instance == null) {
-      s_instance = new LAppLive2DManager();
+      s_instance = new LAppLive2DManager(LAppDefine.ModelName);
     }
 
     return s_instance;
@@ -144,31 +144,16 @@ export class LAppLive2DManager {
   }
 
   /**
-   * 次のシーンに切りかえる
-   * サンプルアプリケーションではモデルセットの切り替えを行う。
-   */
-  public nextScene(): void {
-    const no: number = (this._sceneIndex + 1) % LAppDefine.ModelDirSize;
-    this.changeScene(no);
-  }
-
-  /**
    * シーンを切り替える
    * サンプルアプリケーションではモデルセットの切り替えを行う。
    */
-  public changeScene(index: number): void {
-    this._sceneIndex = index;
+  public loadModel(model: string): void {
     if (LAppDefine.DebugLogEnable) {
-      LAppPal.printMessage(`[APP]model index: ${this._sceneIndex}`);
+      LAppPal.printMessage(`[APP]model: ${model}`);
     }
 
-    // ModelDir[]に保持したディレクトリ名から
-    // model3.jsonのパスを決定する。
-    // ディレクトリ名とmodel3.jsonの名前を一致させておくこと。
-    const model: string = LAppDefine.ModelDir[index];
     const modelPath: string = LAppDefine.ResourcesPath + model + '/';
-    let modelJsonName: string = LAppDefine.ModelDir[index];
-    modelJsonName += '.model3.json';
+    const modelJsonName: string = model + '.model3.json';
 
     this.releaseAllModel();
     this._models.pushBack(new LAppModel());
@@ -184,16 +169,14 @@ export class LAppLive2DManager {
   /**
    * コンストラクタ
    */
-  constructor() {
+  constructor(model: string) {
     this._viewMatrix = new CubismMatrix44();
     this._models = new csmVector<LAppModel>();
-    this._sceneIndex = 0;
-    this.changeScene(this._sceneIndex);
+    this.loadModel(model);
   }
 
   _viewMatrix: CubismMatrix44; // モデル描画に用いるview行列
   _models: csmVector<LAppModel>; // モデルインスタンスのコンテナ
-  _sceneIndex: number; // 表示するシーンのインデックス値
   // モーション再生終了のコールバック関数
   _finishedMotion = (self: ACubismMotion): void => {
     LAppPal.printMessage('Motion Finished:');

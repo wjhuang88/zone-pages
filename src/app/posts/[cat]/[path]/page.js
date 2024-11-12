@@ -2,7 +2,7 @@ import { cache } from 'react'
 
 import { DEFAULT_TITLE } from '@/common-config'
 import { getPost } from '@/apis'
-import { TagIcon } from '@components'
+import { TagIcon, GitalkPanel } from '@components'
 
 import styles from './Post.module.scss'
 
@@ -26,6 +26,9 @@ export default async function Page({ params }) {
         <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
       </div>
       {postData.compomnents}
+      <footer>
+        <GitalkPanel id={`${params.cat}_${params.path}`} />
+      </footer>
     </article>
   )
 }

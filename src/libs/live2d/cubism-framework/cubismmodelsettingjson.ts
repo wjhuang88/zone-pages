@@ -17,7 +17,6 @@ import { CubismJson, Value } from './utils/cubismjson';
  */
 
 // JSON Keys
-const Version = 'Version';
 const FileReferences = 'FileReferences';
 const Groups = 'Groups';
 const Layout = 'Layout';
@@ -35,35 +34,13 @@ const Name = 'Name';
 const FilePath = 'File';
 const Id = 'Id';
 const Ids = 'Ids';
-const Target = 'Target';
-
-// Motions
-const Idle = 'Idle';
-const TapBody = 'TapBody';
-const PinchIn = 'PinchIn';
-const PinchOut = 'PinchOut';
-const Shake = 'Shake';
-const FlickHead = 'FlickHead';
-const Parameter = 'Parameter';
 
 const SoundPath = 'Sound';
 const FadeInTime = 'FadeInTime';
 const FadeOutTime = 'FadeOutTime';
 
-// Layout
-const CenterX = 'CenterX';
-const CenterY = 'CenterY';
-const X = 'X';
-const Y = 'Y';
-const Width = 'Width';
-const Height = 'Height';
-
 const LipSync = 'LipSync';
 const EyeBlink = 'EyeBlink';
-
-const InitParameter = 'init_param';
-const InitPartsVisible = 'init_parts_visible';
-const Val = 'val';
 
 enum FrequestNode {
   FrequestNode_Groups, // getRoot().getValueByString(Groups)

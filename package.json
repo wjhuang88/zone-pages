@@ -10,6 +10,7 @@
   "dependencies": {
     "blowfish-node": "^1.1.4",
     "dayjs": "^1",
+    "gitalk": "^1.8.0",
     "gray-matter": "^4.0.3",
     "jinrishici": "^1.0.6",
     "js-base64": "^3.7.7",

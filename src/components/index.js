@@ -5,6 +5,7 @@ import Aside from './aside'
 import PageLoading from './page-loading'
 import BackgoundWave from './background-wave'
 import { EyeIcon, HeartIcon, MessageIcon, TagIcon, GithubIcon, MailIcon } from './icons'
+import GitalkPanel from './comments'
 
 export {
   PageHeader,
@@ -18,5 +19,6 @@ export {
   PageLoading,
   BackgoundWave,
   GithubIcon,
-  MailIcon
+  MailIcon,
+  GitalkPanel,
 }
