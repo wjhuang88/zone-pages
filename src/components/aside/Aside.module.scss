@@ -138,18 +138,18 @@
 .backtopBox {
   position: absolute;
   z-index: $highest-layer;
-  bottom: -70px;
+  bottom: -60px;
   right: 0;
   display: block;
-  width: 50px;
-  height: 50px;
-  background: $bg-color url("/assets/arrow-up.svg") center / 35px 35px no-repeat;
+  width: 40px;
+  height: 40px;
+  background: $bg-color url("/assets/arrow-up.svg") center / 15px 20px no-repeat;
   border: 1px solid $normal-border-color {
     radius: 50%;
   };
   cursor: pointer;
   transition: background-color .3s;
-  animation: tooltips-in .5s;
+  animation: tooltips-in .3s;
   &:hover {
     background-color: $bg-hover-color;
   }
@@ -158,12 +158,12 @@
 @keyframes tooltips-in {
   0% {
     opacity: 0;
-    transform: rotateZ(90deg);
+    transform: translateY(60px);
   }
 
   10% {
     opacity: 0;
-    transform: rotateZ(90deg);
+    transform: translateY(60px);
   }
 
   100% {

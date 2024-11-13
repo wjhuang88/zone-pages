@@ -1,13 +1,40 @@
 @import 'colors';
 
-.gitalkWrap button {
-  color: $select-color !important;
-  background-color: $fg-color !important;
-  border-color: $fg-color !important;
-  transition: background-color .3s, border-color .3s;
-
-  &:hover {
-    background-color: $fg-hover-color !important;
-    border-color: $fg-hover-color !important;
+.gitalkWrap :global(.gt-btn) {
+  &:not(:global(.gt-btn-preview)) {
+      color: $select-color;
+      background-color: $fg-color;
+      border-color: $fg-color;
+      &:hover {
+        background-color: $fg-hover-color;
+        border-color: $fg-hover-color;
+      }
   }
+  &:global(.gt-btn-preview) {
+      color: $fg-color;
+      background-color: $bg-color;
+      border-color: $fg-color;
+      &:hover {
+        color: $fg-hover-color;
+        background-color: $bg-color;
+        border-color: $fg-hover-color;
+      }
+  }
+  transition: background-color .3s, border-color .3s, color .3s;
+}
+
+:global(.gt-container) {
+  :global(a.gt-header-controls-tip) {
+    color: $fg-color;
+  }
+  :global(a.gt-comment-username) {
+    color: $fg-color;
+  }
+  :global(.gt-ico-tip .gt-svg) svg {
+    fill: $fg-color;
+  }
+  :global(.gt-comment-content .gt-svg) svg {
+    fill: $fg-color;
+  }
+  padding-bottom: 40px;
 }
