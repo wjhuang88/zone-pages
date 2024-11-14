@@ -23,7 +23,7 @@
   transition: background-color .3s, border-color .3s, color .3s;
 }
 
-:global(.gt-container) {
+.gitalkWrap :global(.gt-container) {
   :global(a.gt-header-controls-tip) {
     color: $fg-color;
   }
