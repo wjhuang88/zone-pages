@@ -1,4 +1,4 @@
-@import 'commons';
+@use '../../styles/commons';
 
 .bgWave {
   position: absolute;
@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: $layer-5;
+  z-index: commons.$layer-5;
   background-color: transparent;
   overflow: hidden;
   transition: opacity 0.6s;

@@ -1,11 +1,11 @@
-@import 'colors';
-@import 'commons';
+@use '../../styles/colors';
+@use '../../styles/commons';
 
 .list {
   margin: 10px 0 0 0;
   padding: 10px 0 0 0;
   list-style: none;
-  border-top: 1px solid $fade-border-color;
+  border-top: 1px solid colors.$fade-border-color;
   &>li {
     display: flex;
     flex-direction: row;
@@ -18,11 +18,11 @@
   margin: 0 0 0 8px;
   line-height: 1.2;
   font-weight: 300;
-  border-bottom: 1px solid $bg-color;
+  border-bottom: 1px solid colors.$bg-color;
   transition: all 0.2s;
   &:hover {
-    color: $head-text-hover-color;
-    border-color: $head-text-hover-color;
+    color: colors.$head-text-hover-color;
+    border-color: colors.$head-text-hover-color;
   }
 }
 
@@ -33,7 +33,7 @@
   flex: 0 0 auto {
     direction: column;
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     display: none;
   }
 }
@@ -49,11 +49,11 @@
     weight: normal;
     size: 14px;
   }
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
   line-height: 1;
   margin: 0 0 5px;
   padding: 0 0 0 5px;
-  border-left: 4px solid $fade-text-color;
+  border-left: 4px solid colors.$fade-text-color;
   transition: color 0.2s;
 }
 
@@ -74,16 +74,16 @@
   margin: 20px 0 0;
   padding: 15px 20px;
   font-size: 14px;
-  color: $head-text-color;
-  background-color: $bg-color;
+  color: colors.$head-text-color;
+  background-color: colors.$bg-color;
   transition: border-color 0.2s;
-  border: 1px solid $fade-border-color {
+  border: 1px solid colors.$fade-border-color {
       radius: 16px;
     }
   &:hover {
-    border-color: $fade-border-hover-color;
+    border-color: colors.$fade-border-hover-color;
     h2 {
-      color: $fade-text-hover-color;
+      color: colors.$fade-text-hover-color;
     }
   }
   &>h2 {
@@ -95,12 +95,12 @@
 .motto {
   position: relative;
   padding: 15px 20px;
-  border: 1px solid $fade-border-color {
+  border: 1px solid colors.$fade-border-color {
     radius: 16px;
   }
-  background: $bg-color url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
+  background: colors.$bg-color url('/assets/sakura.png') no-repeat 150px -15px/200px 200px;
   font-size: 14px;
-  color: $head-text-color;
+  color: colors.$head-text-color;
   &::after {
     @include motto-shadow;
     transform: rotate(3deg);
@@ -117,7 +117,7 @@
       opacity: 1;
     }
     h2 {
-      color: $fade-text-hover-color;
+      color: colors.$fade-text-hover-color;
     }
   }
   &>p {
@@ -137,21 +137,21 @@
 
 .backtopBox {
   position: absolute;
-  z-index: $highest-layer;
+  z-index: commons.$highest-layer;
   bottom: -60px;
   right: 0;
   display: block;
   width: 40px;
   height: 40px;
-  background: $bg-color url("/assets/arrow-up.svg") center / 15px 20px no-repeat;
-  border: 1px solid $normal-border-color {
+  background: colors.$bg-color url("/assets/arrow-up.svg") center / 15px 20px no-repeat;
+  border: 1px solid colors.$normal-border-color {
     radius: 50%;
   };
   cursor: pointer;
   transition: background-color .3s;
   animation: tooltips-in .3s;
   &:hover {
-    background-color: $bg-hover-color;
+    background-color: colors.$bg-hover-color;
   }
 }
 

@@ -1,5 +1,5 @@
-@import '../commons';
+@use '../commons';
 
 .bodyFont {
-  font-family: join(var(--font-quicksand), $common-font);
+  font-family: var(--font-quicksand), commons.$common-font;
 }

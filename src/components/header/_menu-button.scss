@@ -1,43 +1,43 @@
-@import 'colors';
-@import 'commons';
+@use '../../styles/colors';
+@use '../../styles/commons';
 
 .menuBtn {
-  @media screen and (min-width: $width-max-aside) {
+  @media screen and (min-width: commons.$width-max-aside) {
     display: none;
   }
 
   position: absolute;
-  top: $menu-top;
-  right: $menu-right;
-  z-index: $highest-layer;
-  background-color: $bg-color;
-  padding: $menu-padding;
+  top: commons.$menu-top;
+  right: commons.$menu-right;
+  z-index: commons.$highest-layer;
+  background-color: colors.$bg-color;
+  padding: commons.$menu-padding;
 
-  border: 1px solid $normal-border-color {
+  border: 1px solid colors.$normal-border-color {
     radius: 10px 2px 10px 2px;
   }
 
   transition: background-color .3s;
 
   &:hover {
-    background-color: $bg-hover-color;
+    background-color: colors.$bg-hover-color;
   }
 
   .bar {
     display: block;
-    width: $bar-width;
-    height: $bar-height;
+    width: commons.$bar-width;
+    height: commons.$bar-height;
     border-radius: 1px;
-    background-color: $head-text-color;
+    background-color: colors.$head-text-color;
     transition: transform .2s, opacity .2s;
     &+.bar {
-      margin: $bar-gap 0 0;
+      margin: commons.$bar-gap 0 0;
     }
   }
 
   &.open > .bar {
     &:nth-child(1) {
-      transform: translateY($bar-height + $bar-gap) rotateZ(135deg);
+      transform: translateY(commons.$bar-height + commons.$bar-gap) rotateZ(135deg);
     }
   
     &:nth-child(2) {
@@ -46,7 +46,7 @@
     }
   
     &:nth-child(3) {
-      transform: translateY(- $bar-height - $bar-gap) rotateZ(-135deg);
+       transform: translateY(- commons.$bar-height - commons.$bar-gap) rotateZ(-135deg);
     }
   }
 }

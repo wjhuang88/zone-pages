@@ -1,12 +1,12 @@
-@import 'colors';
-@import 'commons';
+@use '../../styles/colors';
+@use '../../styles/commons';
 
-$change-point: ($width-fix-min + 40px);
+$change-point: (commons.$width-fix-min + 40px);
 $item-gap: 30px;
 $top-gap: 40px;
 
 .postList {
-  z-index: $layer-3;
+  z-index: commons.$layer-3;
   margin: $top-gap 0 0 0;
   padding: 0;
   list-style: none;
@@ -18,7 +18,7 @@ $top-gap: 40px;
 
 .postItem {
   position: relative;
-  z-index: $layer-4;
+  z-index: commons.$layer-4;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -29,7 +29,7 @@ $top-gap: 40px;
   padding: 0 2px $item-gap 0;
   &+.postItem {
     padding: $item-gap 2px $item-gap 0;
-    border-top: 1px solid $fade-border-color;
+    border-top: 1px solid colors.$fade-border-color;
   }
   @media screen and (max-width: $change-point) {
     padding: 0 2px calc($item-gap * 0.7) 0;
@@ -54,7 +54,7 @@ $top-gap: 40px;
 
 .postImage {
   position: relative;
-  z-index: $layer-6;
+  z-index: commons.$layer-6;
   display: block;
   height: 100px;
   width: 150px;
@@ -83,12 +83,12 @@ $top-gap: 40px;
     }
   }
   &::before {
-    @include image-trans($layer-7);
+    @include image-trans(commons.$layer-7);
     border-radius: 8px;
-    background: $fg-color;
+    background: colors.$fg-color;
   }
   &::after {
-    @include image-trans($layer-8);
+    @include image-trans(commons.$layer-8);
     margin-top: 0;
     background: {
       image: url('/assets/eye.svg');
@@ -113,7 +113,7 @@ $top-gap: 40px;
 }
 
 .postBlock {
-  z-index: $layer-6;
+  z-index: commons.$layer-6;
   margin: 0 0 0 20px;
   width: 100%;
   @media screen and (max-width: $change-point) {
@@ -152,17 +152,17 @@ $top-gap: 40px;
 .title {
   position: relative;
   margin: -7px 0 4px;
-  color: $head-text-color;
+  color: colors.$head-text-color;
   font-size: 18px;
   @media screen and (max-width: $change-point) {
     font-size: 16px;
   }
   line-height: 1.5;
-  border-bottom: 1px solid $bg-color;
+  border-bottom: 1px solid colors.$bg-color;
   transition: color 0.2s, border-color 0.2s;
   &:hover {
-    color: $head-text-hover-color;
-    border-color: $head-text-hover-color;
+    color: colors.$head-text-hover-color;
+    border-color: colors.$head-text-hover-color;
   }
 }
 
@@ -172,12 +172,12 @@ $top-gap: 40px;
   height: 48px;
   font-size: 13px;
   line-height: 24px;
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
   text-overflow: ellipsis;
   overflow: hidden;
   transition: color 0.2s;
   .postBlock:hover & {
-    color: $fade-text-hover-color;
+    color: colors.$fade-text-hover-color;
   }
 }
 
@@ -191,7 +191,7 @@ $top-gap: 40px;
     weight: 400;
   }
   line-height: 20px;
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
 }
 
 @keyframes item-in {

@@ -1,23 +1,23 @@
-@import 'commons';
+@use '../../styles/commons';
 
 .container {
   display: none;
   position: fixed;
-  z-index: $highest-layer;
+  z-index: commons.$highest-layer;
   bottom: 0;
   right: -56px;
   width: 256px;
   height: 256px;
-  @media screen and (min-width: $width-max-widget) {
+  @media screen and (min-width: commons.$width-max-widget) {
     display: block;
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     display: block;
     width: 120px;
     height: 120px;
     background-size: 60px;
     position: absolute;
-    top: $menu-top - 40px;
+    top: commons.$menu-top - 40px;
     left: -10px;
   }
 }

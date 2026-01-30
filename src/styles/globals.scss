@@ -1,5 +1,5 @@
-@import 'colors';
-@import 'commons';
+@use './colors';
+@use './commons';
 
 @mixin flex-common($layer, $width) {
   position: relative;
@@ -17,22 +17,22 @@
 }
 
 ::selection {
-  color: $select-color;
-  background-color: $select-bg-color;
+  color: colors.$select-color;
+  background-color: colors.$select-bg-color;
 }
 
 html,
 body {
-  background: $bg-color;
+  background: colors.$bg-color;
   position: relative;
-  z-index: $lowest-layer;
+  z-index: commons.$lowest-layer;
   padding: 0;
   margin: 0;
   font-size: 14px;
 }
 body {
   padding: 0 20px 0;
-  @media screen and (max-width: $width-just-min) {
+  @media screen and (max-width: commons.$width-just-min) {
     overflow-x: hidden;
   }
 }
@@ -46,21 +46,21 @@ a {
 }
 
 .page-wrap {
-  @include flex-common($layer-1, $width-frame);
+  @include flex-common(commons.$layer-1, commons.$width-frame);
   margin: 0 auto;
   min-height: 600px;
-  @media screen and (max-width: $width-max-aside) {
-    width: $width-main;
+  @media screen and (max-width: commons.$width-max-aside) {
+    width: commons.$width-main;
   }
-  @media screen and (max-width: $width-just-min) {
+  @media screen and (max-width: commons.$width-just-min) {
     width: 100%;
   }
 }
 
 .main {
-  @include flex-common($layer-2, $width-main);
-  flex-basis: $width-main;
-  @media screen and (max-width: $width-just-min) {
+  @include flex-common(commons.$layer-2, commons.$width-main);
+  flex-basis: commons.$width-main;
+  @media screen and (max-width: commons.$width-just-min) {
     width: 100%;
     flex-basis: 100%;
   }

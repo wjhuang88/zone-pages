@@ -1,22 +1,22 @@
-@import 'colors';
-@import 'commons';
+@use '../../styles/colors';
+@use '../../styles/commons';
 
 $logo-width: 220px;
 $logo-width-short: auto;
 
 .container {
   display: block;
-  border-left: 4px solid $normal-border-color;
+  border-left: 4px solid colors.$normal-border-color;
   padding: 0 10px;
-  @media screen and (min-width: $width-max-aside) {
+  @media screen and (min-width: commons.$width-max-aside) {
     animation: init 1.2s;
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     width: 100%;
     padding: 0 0 20px;
     text-align: center;
     border-left: none;
-    border-bottom: 1px solid $normal-border-color;
+    border-bottom: 1px solid colors.$normal-border-color;
     animation: init-mobile 1.2s;
   }
 }
@@ -28,10 +28,10 @@ $logo-width-short: auto;
     size: 22px;
     weight: 300;
   }
-  color: $fg-color;
+  color: colors.$fg-color;
   text-align: left;
   user-select: none;
-  @media screen and (min-width: $width-max-aside) {
+  @media screen and (min-width: commons.$width-max-aside) {
     animation: init-title 1.2s;
     background: url('/assets/title-cat.webp') no-repeat {
       size: 100px;
@@ -42,7 +42,7 @@ $logo-width-short: auto;
       background-position: 140px -20px;
     }
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     display: none;
   }
 }
@@ -53,7 +53,7 @@ $logo-width-short: auto;
     size: 16px;
     weight: 300;
   }
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
   user-select: none;
 }
 
@@ -66,14 +66,14 @@ $logo-width-short: auto;
     weight: 100;
     size: 14px;
   }
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
   text-align: right;
-  border-top: 1px solid $normal-text-color;
+  border-top: 1px solid colors.$normal-text-color;
   user-select: none;
-  @media screen and (min-width: $width-max-aside) {
+  @media screen and (min-width: commons.$width-max-aside) {
     animation: init-subtitle 1.2s;
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     display: inline-block;
     text-align: center;
     font-size: 18px;
@@ -82,21 +82,21 @@ $logo-width-short: auto;
     height: auto;
     margin: 0 auto;
     border-top: none;
-    color: $fg-color;
+    color: colors.$fg-color;
   }
 }
 
 @keyframes init {
   0% {
-    border-color: $bg-color;
+    border-color: colors.$bg-color;
   }
 
   60% {
-    border-color: $bg-color;
+    border-color: colors.$bg-color;
   }
 
   100% {
-    border-color: $normal-border-color;
+    border-color: colors.$normal-border-color;
   }
 }
 
@@ -117,17 +117,17 @@ $logo-width-short: auto;
 @keyframes init-subtitle {
   0% {
     opacity: 0;
-    border-color: $bg-color;
+    border-color: colors.$bg-color;
     transform: translateX(-200px);
   }
 
   70% {
-    border-color: $bg-color;
+    border-color: colors.$bg-color;
   }
 
   100% {
     opacity: 1;
-    border-color: $normal-text-color;
+    border-color: colors.$normal-text-color;
     transform: translateX(0);
   }
 }
@@ -135,13 +135,13 @@ $logo-width-short: auto;
 @keyframes init-mobile {
   0% {
     opacity: 0;
-    border-color: $bg-color;
+    border-color: colors.$bg-color;
     transform: translateX(0);
   }
 
   100% {
     opacity: 1;
-    border-color: $normal-border-color;
+    border-color: colors.$normal-border-color;
     transform: translateX(0);
   }
 }

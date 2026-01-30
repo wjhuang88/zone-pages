@@ -1,8 +1,12 @@
-@import 'logo-block';
-@import 'nav-block';
-@import 'menu-button';
+@use 'logo-block';
+@use 'nav-block';
+@use 'menu-button';
+@use '../../styles/commons';
+@use '../../styles/colors';
 
-$btn-height: $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2;
+/* Note: This approach doesn't work well with Sass modules. Let me define a constant value or restructure */
+/* $btn-height was: menu-padding * 2 + bar-height * 3 + bar-gap * 2 = 10px * 2 + 2px * 3 + 5px * 2 = 36px */
+$btn-height: 36px;
 
 @mixin flex-common {
   display: flex;
@@ -14,16 +18,16 @@ $btn-height: $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2;
   @include flex-common;
   justify-content: space-between;
   height: 80px;
-  width: $width-frame;
+  width: commons.$width-frame;
   margin: 0 auto 0;
   padding: 24px 0 0;
-  @media screen and (max-width: $width-max-aside) {
-    width: $width-main;
+  @media screen and (max-width: commons.$width-max-aside) {
+    width: commons.$width-main;
   }
-  @media screen and (max-width: $width-just-min) {
+  @media screen and (max-width: commons.$width-just-min) {
     width: 100%;
-    height: $menu-top + $btn-height + 13px;
-    padding: $menu-top 0 0;
+    height: commons.$menu-top + $btn-height + 13px;
+    padding: commons.$menu-top 0 0;
   }
 }
 
@@ -33,12 +37,12 @@ $btn-height: $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  @media screen and (min-width: $width-max-aside) {
+  @media screen and (min-width: commons.$width-max-aside) {
     li+li {
       margin: 0 0 0 5px;
     }
   }
-  @media screen and (max-width: $width-max-aside) {
+  @media screen and (max-width: commons.$width-max-aside) {
     &.opened {
       display: block;
     }
@@ -46,13 +50,13 @@ $btn-height: $menu-padding * 2 + $bar-height * 3 + $bar-gap * 2;
       display: none;
     }
     position: absolute;
-    z-index: $highest-layer;
+    z-index: commons.$highest-layer;
     top: 0;
     right: 0;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 $menu-right 0 0;
-    margin-top: $menu-top + $btn-height + 3px;
+    padding: 0 commons.$menu-right 0 0;
+    margin-top: commons.$menu-top + $btn-height + 3px;
     animation: mobile-nav-in .5s;
     li {
       width: 100%;

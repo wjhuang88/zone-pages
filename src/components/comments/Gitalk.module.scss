@@ -1,23 +1,23 @@
-@import 'colors';
+@use '../../styles/colors';
 
 .gitalkWrap :global(.gt-btn) {
   &:not(:global(.gt-btn-preview)) {
-      color: $select-color;
-      background-color: $fg-color;
-      border-color: $fg-color;
-      &:hover {
-        background-color: $fg-hover-color;
-        border-color: $fg-hover-color;
+    color: colors.$select-color;
+    background-color: colors.$fg-color;
+    border-color: colors.$fg-color;
+    &:hover {
+      background-color: colors.$fg-hover-color;
+      border-color: colors.$fg-hover-color;
       }
   }
   &:global(.gt-btn-preview) {
-      color: $fg-color;
-      background-color: $bg-color;
-      border-color: $fg-color;
-      &:hover {
-        color: $fg-hover-color;
-        background-color: $bg-color;
-        border-color: $fg-hover-color;
+    color: colors.$fg-color;
+    background-color: colors.$bg-color;
+    border-color: colors.$fg-color;
+    &:hover {
+      color: colors.$fg-hover-color;
+      background-color: colors.$bg-color;
+      border-color: colors.$fg-hover-color;
       }
   }
   transition: background-color .3s, border-color .3s, color .3s;
@@ -25,16 +25,16 @@
 
 .gitalkWrap :global(.gt-container) {
   :global(a.gt-header-controls-tip) {
-    color: $fg-color;
+    color: colors.$fg-color;
   }
   :global(a.gt-comment-username) {
-    color: $fg-color;
+    color: colors.$fg-color;
   }
   :global(.gt-ico-tip .gt-svg) svg {
-    fill: $fg-color;
+    fill: colors.$fg-color;
   }
   :global(.gt-comment-content .gt-svg) svg {
-    fill: $fg-color;
+    fill: colors.$fg-color;
   }
   padding-bottom: 40px;
 }

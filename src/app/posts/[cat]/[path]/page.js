@@ -9,14 +9,16 @@ import styles from './Post.module.scss'
 const fetchData = cache((cat, path) => getPost(cat, path))
 
 export async function generateMetadata({ params }) {
-  const postData = await fetchData(params.cat, params.path)
+  const paramsSync = await params
+  const postData = await fetchData(paramsSync.cat, paramsSync.path)
   return {
     title: `${postData.title} | ${DEFAULT_TITLE}`
   }
 }
 
 export default async function Page({ params }) {
-  const postData = await fetchData(params.cat, params.path)
+  const paramsSync = await params
+  const postData = await fetchData(paramsSync.cat, paramsSync.path)
   return (
     <article className={styles.article}>
       <h1 className={styles.title}>{postData.title}</h1>
@@ -27,7 +29,7 @@ export default async function Page({ params }) {
       </div>
       {postData.compomnents}
       <footer>
-        <GitalkPanel id={`${params.cat}_${params.path}`} />
+        <GitalkPanel id={`${paramsSync.cat}_${paramsSync.path}`} />
       </footer>
     </article>
   )

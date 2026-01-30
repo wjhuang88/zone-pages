@@ -1,16 +1,16 @@
-@import 'commons';
+@use '../../styles/commons';
 
 .container {
   display: none;
   position: fixed;
-  z-index: $highest-layer;
+  z-index: commons.$highest-layer;
   top: 0;
   right: 0;
   width: 120px;
   height: 225px;
   animation: main-swing 10s infinite;
   transform-origin: 50% 0;
-  @media screen and (min-width: $width-max-widget) {
+  @media screen and (min-width: commons.$width-max-widget) {
     display: block;
   }
 }

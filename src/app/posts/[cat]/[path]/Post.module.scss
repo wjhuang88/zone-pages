@@ -1,7 +1,7 @@
-@import 'colors';
+@use '../../../../styles/colors';
 
 @mixin art-head($fs) {
-  color: $head-text-color;
+  color: colors.$head-text-color;
   text-rendering: optimizelegibility;
   margin: 0 0 16px;
   font: {
@@ -12,7 +12,7 @@
 
 @mixin table-cell {
   padding: 6px 13px;
-  border: 1px solid $normal-border-color;
+  border: 1px solid colors.$normal-border-color;
 }
 
 .article {
@@ -33,7 +33,7 @@
     @include art-head(18px);
   }
   p {
-    color: $normal-text-color;
+    color: colors.$normal-text-color;
     line-height: 1.8;
     font: {
       weight: 300;
@@ -45,8 +45,8 @@
       text-align: center;
     }
     code {
-      color: rgba($normal-text-color, 0.4);
-      background-color: rgba($normal-border-color, 0.3);
+      color: rgba(colors.$normal-text-color, 0.4);
+      background-color: rgba(colors.$normal-border-color, 0.3);
       border: 0;
       margin: 0;
       padding: 2px 6px;
@@ -59,23 +59,23 @@
     }
   }
   blockquote {
-    border-inline-start: 8px solid $code-bg-color;
+    border-inline-start: 8px solid colors.$code-bg-color;
     margin: {
       block: 0 20px;
       inline: 0;
     }
     padding-inline: 10px 0;
     &>p {
-      color: $quote-text-color;
+      color: colors.$quote-text-color;
       margin: 0;
       &>code {
-        color: rgba($quote-text-color, 0.6);
+        color: rgba(colors.$quote-text-color, 0.6);
       }
     }
   }
   ul {
     padding-inline-start: 1em;
-    color: $normal-text-color;
+    color: colors.$normal-text-color;
     line-height: 1.8;
     font: {
       weight: 300;
@@ -99,12 +99,12 @@
     tr:not(:has(>th)) {
       transition: background-color .3s;
       &:hover {
-        background-color: rgba($code-bg-color, 0.3);
+        background-color: rgba(colors.$code-bg-color, 0.3);
       }
     }
     th {
       font-weight: inherit;
-      background-color: rgba($code-bg-color, 0.5);
+      background-color: rgba(colors.$code-bg-color, 0.5);
       @include table-cell;
     }
     td {
@@ -118,7 +118,7 @@
     padding: 1em;
     overflow: auto;
     &[class*="language-"] {
-      border: 1px solid rgba($code-bg-color, 0.9) {
+      border: 1px solid rgba(colors.$code-bg-color, 0.9) {
         radius: 12px;
       }
       transition: box-shadow .2s;
@@ -128,23 +128,21 @@
     }
   }
   a {
-    $color: rgba($normal-text-color, 0.5);
-    $hover-color: $fg-hover-color;
+    $color: rgba(colors.$normal-text-color, 0.5);
+    $hover-color: colors.$fg-hover-color;
     color: $color;
-    padding: 0 2px 0;
     text: {
       decoration: $color solid underline 1px;
-      underline-offset: 4px;
     }
     transition: color .2s,text-decoration-color .2s;
     &:hover {
-      color: $hover-color;
-      text-decoration-color: $hover-color;
+      color: colors.$fg-hover-color;
+      text-decoration-color: colors.$fg-hover-color;
     }
   }
   :not(pre)>code[class*=language-],
   pre[class*=language-] {
-    background: rgba($code-bg-color, 0.5);
+    background: rgba(colors.$code-bg-color, 0.5);
   }
 }
 
@@ -158,7 +156,7 @@
   justify-content: flex-start;
   align-items: center;
   line-height: 20px;
-  color: $fade-text-color;
+  color: colors.$fade-text-color;
   margin: 0 0 32px;
   font: {
     size: 14px;

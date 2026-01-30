@@ -15,7 +15,7 @@ const fetchImage = (img, headers) => {
   return fetch(imgPath, { headers })
 }
 
-export function GET({ headers }, { params }) {
-  const realPath = decode(params.encoded)
-  return fetchImage(realPath, headers)
+export async function GET({ headers }, { params }) {
+  const realPath = decode((await params).encoded)
+  return await fetchImage(realPath, headers)
 }
