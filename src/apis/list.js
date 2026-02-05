@@ -21,3 +21,9 @@ export async function getLatestList() {
   const latestJson = await latestData.json()
   return latestJson.map(o => createMeta(o, o.collection, o.summary))
 }
+
+export async function getCategoryList() {
+  const categoryData = await fetch(`${CONTENT_BASE}/notebooks.json`, { cache: 'no-cache' })
+  const categoryJson = await categoryData.json()
+  return categoryJson
+}
