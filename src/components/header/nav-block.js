@@ -19,7 +19,7 @@ const loadingStyle = {
 export default function NavBlock({ title, subtitle, href, sort }) {
 
   const selectedHref = usePathname()
-  const selected = selectedHref === href
+  const selected = selectedHref === href || selectedHref.startsWith(href + '/')
 
   const [loading, setLoading] = useState(false)
 
