@@ -25,7 +25,7 @@ export default async function Page({ params }) {
       <div className={styles.subtitle}>
         <span>发表于&nbsp;{postData.createTime}</span>
         <span>字数&nbsp;{postData.size}</span>
-        <TagIcon style={{ marginLeft: 15 }} value="疯言疯语" />
+        <TagIcon style={{ marginLeft: 15 }} value={postData.tags} />
       </div>
       {postData.compomnents}
       <footer>

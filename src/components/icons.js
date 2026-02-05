@@ -76,6 +76,18 @@ export function MessageIcon({ value, style, className }) {
 }
 
 export function TagIcon({ value, style, className }) {
+  let displayValue;
+  if (Array.isArray(value)) {
+    if (value.length > 3) {
+      displayValue = `${value.slice(0, 3).join('/')}/...`;
+    } else if (value.length > 1) {
+      displayValue = value.join('/');
+    } else {
+      displayValue = value[0];
+    }
+  } else {
+    displayValue = value;
+  }
   return (
     <span className={className} style={{ display: "flex", flexDirection: "row", alignItems: 'center', ...style }}>
       <svg
@@ -94,7 +106,7 @@ export function TagIcon({ value, style, className }) {
           p-id="27107"
         ></path>
       </svg>
-      <span style={{ marginLeft: 2 }}>{value}</span>
+      <span style={{ marginLeft: 2 }}>{displayValue}</span>
     </span>
   )
 }
