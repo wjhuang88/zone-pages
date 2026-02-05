@@ -39,6 +39,7 @@ export async function getNavItems() {
       title: cat.title,
       subtitle: cat.subtitle,
       href: `/posts/${cat.path}`,
-    }))
+    })),
+    { id: categories.length + 1, title: '关于', subtitle: 'ABOUT', href: '/about' }
   ]
 }
