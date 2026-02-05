@@ -27,3 +27,17 @@ export async function getCategoryList() {
   const categoryJson = await categoryData.json()
   return categoryJson
 }
+
+export async function getNavItems() {
+  const categories = await getCategoryList()
+  
+  return [
+    { id: 0, title: '首页', subtitle: 'HOME', href: '/' },
+    ...categories.map((cat, index) => ({
+      id: cat.id + 1,
+      title: cat.title,
+      subtitle: cat.subtitle,
+      href: `/${cat.path}`,
+    }))
+  ]
+}

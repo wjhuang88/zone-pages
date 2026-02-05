@@ -1,15 +1,12 @@
 'use client';
 
-import GitalkComponent from "gitalk/dist/gitalk-component"
-
+import GitalkComponent from '../GitalkComponent'
 import 'gitalk/dist/gitalk.css'
 import styles from './Gitalk.module.scss'
-import { useEffect, useState } from "react";
 
 export default function GitalkPanel({ id }) {
-  
-  function makeComponent(id) {
-    return <GitalkComponent options={{
+  return <div className={styles.gitalkWrap}>
+    <GitalkComponent options={{
       clientID: "Ov23li3B9TnYLEBmCaYP",
       clientSecret: "688f589de997cfad8a13ca00b57aaf29c8fbecef",
       repo: "zone-comments",
@@ -19,13 +16,5 @@ export default function GitalkPanel({ id }) {
       language: 'zh-CN',
       distractionFreeMode: false
     }} />
-  }
-
-  let [comp, setComp] = useState(() => {})
-
-  useEffect(() => setComp(makeComponent(id)), [id])
-
-  return <div className={styles.gitalkWrap}>
-    {comp}
   </div>
 }
