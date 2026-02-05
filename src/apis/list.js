@@ -22,22 +22,23 @@ export async function getLatestList() {
   return latestJson.map(o => createMeta(o, o.collection, o.summary))
 }
 
-export async function getCategoryList() {
-  const categoryData = await fetch(`${CONTENT_BASE}/notebooks.json`, { cache: 'no-cache' })
-  const categoryJson = await categoryData.json()
-  return categoryJson
+export async function getCategoryList(cat) {
+  const catData = await fetch(`${CONTENT_BASE}/${cat}/meta.json`, { cache: 'no-cache' })
+  const catJson = await catData.json()
+  return catJson.map(o => createMeta(o, cat, o.summary))
 }
 
 export async function getNavItems() {
-  const categories = await getCategoryList()
+  const categoryData = await fetch(`${CONTENT_BASE}/notebooks.json`, { cache: 'no-cache' })
+  const categories = await categoryData.json()
   
   return [
     { id: 0, title: '首页', subtitle: 'HOME', href: '/' },
-    ...categories.map((cat, index) => ({
+    ...categories.map((cat, _) => ({
       id: cat.id + 1,
       title: cat.title,
       subtitle: cat.subtitle,
-      href: `/${cat.path}`,
+      href: `/posts/${cat.path}`,
     }))
   ]
 }
