@@ -35,16 +35,28 @@ const matterOptions = {
   }
 }
 
-async function parseMd(catPath, source) {
-  const frontParsed = matter(source, matterOptions)
-  const file = await unified()
+function handleMdFile(catPath, content) {
+  return unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeRewrite, { rewrite: imgRewriter(catPath) })
     .use(rehypePrism)
     .use(rehypeReact, rehypeOptions)
-    .process(frontParsed.content)
+    .process(content)
+}
+
+async function handleMdFetch(url, cacheTag) {
+  const response = await fetch(url, { next: { tags: [cacheTag] } })
+  if (!response.ok) {
+    notFound()
+  }
+  return await response.text()
+}
+
+async function parseMd(catPath, source) {
+  const frontParsed = matter(source, matterOptions)
+  const file = await handleMdFile(catPath, frontParsed.content)
   return {
     ...mergeMeta(frontParsed.data, catPath, frontParsed.excerpt),
     size: frontParsed.content.length,
@@ -53,15 +65,16 @@ async function parseMd(catPath, source) {
 }
 
 async function readHtmlFromRemoteMd(catPath, url, cacheTag) {
-  const response = await fetch(url, { next: { tags: [ cacheTag ] } })
-  if (!response.ok) {
-    notFound()
-  }
-  const md = await response.text()
+  const md = await handleMdFetch(url, cacheTag)
   return await parseMd(catPath, md)
 }
 
 export async function getPost(cat, path) {
   const realPath = `${cat}/${path}.md`
   return await readHtmlFromRemoteMd(cat, `${CONTENT_BASE}/${realPath}`, realPath)
+}
+
+export async function getAbout() {
+  const md = await handleMdFetch(`${CONTENT_BASE}/about.md`, "about.md")
+  return await handleMdFile('about', md)
 }

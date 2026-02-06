@@ -1,8 +1,11 @@
-export default function AboutPage() {
+import { getAbout } from '@apis'
+
+export default async function AboutPage() {
+  const aboutContent = await getAbout()
+  
   return (
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>关于</h1>
-      <p>这里是关于页面的内容。</p>
+      {aboutContent.result}
     </div>
   )
 }

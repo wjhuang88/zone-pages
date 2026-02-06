@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const paramsSync = await params
-  const postData = await fetchData(paramsSync.cat, paramsSync.path)
+  const { cat, path } = await params
+  const postData = await fetchData(cat, path)
   return (
     <article className={styles.article}>
       <h1 className={styles.title}>{postData.title}</h1>
@@ -29,7 +29,7 @@ export default async function Page({ params }) {
       </div>
       {postData.compomnents}
       <footer>
-        <GitalkPanel id={`${paramsSync.cat}_${paramsSync.path}`} />
+        <GitalkPanel id={`${cat}_${path}`} />
       </footer>
     </article>
   )
