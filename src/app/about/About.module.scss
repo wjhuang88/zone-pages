@@ -1,4 +1,4 @@
-@use '../../../styles/colors';
+@use '../../styles/colors';
 
 @mixin art-head($fs) {
   color: colors.$head-text-color;
