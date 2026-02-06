@@ -1,0 +1,178 @@
+@use '../../../styles/colors';
+
+@mixin art-head($fs) {
+  color: colors.$head-text-color;
+  text-rendering: optimizelegibility;
+  margin: 0 0 16px;
+  font: {
+    weight: 400;
+    size: $fs;
+  };
+}
+
+@mixin table-cell {
+  padding: 6px 13px;
+  border: 1px solid colors.$normal-border-color;
+}
+
+.article {
+  margin-top: 40px;
+  width: 100%;
+  animation: init-post .4s;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+  }
+  h1 {
+    @include art-head(24px);
+  }
+  h2 {
+    @include art-head(20px);
+  }
+  h3, h4, h5, h6 {
+    @include art-head(18px);
+  }
+  p {
+    color: colors.$normal-text-color;
+    line-height: 1.8;
+    font: {
+      weight: 300;
+      size: 16px;
+    }
+    margin: 0 0 20px;
+    word-break: break-word;
+    &:has(>img) {
+      text-align: center;
+    }
+    code {
+      color: rgba(colors.$normal-text-color, 0.4);
+      background-color: rgba(colors.$normal-border-color, 0.3);
+      border: 0;
+      margin: 0;
+      padding: 2px 6px;
+      border-radius: 6px;
+      vertical-align: text-top;
+      font: {
+        size: 85%;
+        weight: normal;
+      };
+    }
+  }
+  blockquote {
+    border-inline-start: 8px solid colors.$code-bg-color;
+    margin: {
+      block: 0 20px;
+      inline: 0;
+    }
+    padding-inline: 10px 0;
+    &>p {
+      color: colors.$quote-text-color;
+      margin: 0;
+      &>code {
+        color: rgba(colors.$quote-text-color, 0.6);
+      }
+    }
+  }
+  ul {
+    padding-inline-start: 1em;
+    color: colors.$normal-text-color;
+    line-height: 1.8;
+    font: {
+      weight: 300;
+      size: 16px;
+    }
+    word-break: break-word;
+  }
+  table {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: auto;
+    word-break: initial;
+    border: {
+      spacing: 0;
+      collapse: collapse;
+    };
+    text-align: left;
+    line-height: 1.6;
+    tr:not(:has(>th)) {
+      transition: background-color .3s;
+      &:hover {
+        background-color: rgba(colors.$code-bg-color, 0.3);
+      }
+    }
+    th {
+      font-weight: inherit;
+      background-color: rgba(colors.$code-bg-color, 0.5);
+      @include table-cell;
+    }
+    td {
+      @include table-cell;
+    }
+  }
+  pre {
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 1em;
+    overflow: auto;
+    &[class*="language-"] {
+      border: 1px solid rgba(colors.$code-bg-color, 0.9) {
+        radius: 12px;
+      }
+      transition: box-shadow .2s;
+      &:hover {
+        box-shadow: 0px 0px 6px 0px #00000020;
+      }
+    }
+  }
+  a {
+    $color: rgba(colors.$normal-text-color, 0.5);
+    $hover-color: colors.$fg-hover-color;
+    color: $color;
+    text: {
+      decoration: $color solid underline 1px;
+    }
+    transition: color .2s,text-decoration-color .2s;
+    &:hover {
+      color: colors.$fg-hover-color;
+      text-decoration-color: colors.$fg-hover-color;
+    }
+  }
+  :not(pre)>code[class*=language-],
+  pre[class*=language-] {
+    background: rgba(colors.$code-bg-color, 0.5);
+  }
+}
+
+.title {
+  position: relative;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 20px;
+  color: colors.$fade-text-color;
+  margin: 0 0 32px;
+  font: {
+    size: 14px;
+    weight: 400;
+  }
+  &>span:not(:first-child) {
+    margin: 0 0 0 15px;
+  }
+}
+
+@keyframes init-post {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

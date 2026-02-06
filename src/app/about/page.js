@@ -1,11 +1,13 @@
 import { getAbout } from '@apis'
 
+import styles from './About.module.scss'
+
 export default async function AboutPage() {
   const aboutContent = await getAbout()
   
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+    <article className={styles.article}>
       {aboutContent.result}
-    </div>
+    </article>
   )
 }
