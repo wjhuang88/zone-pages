@@ -22,6 +22,9 @@ export default async function RootLayout({ children }) {
 
   return (
     <html className={quicksand.variable} lang="zh-Hans">
+      <head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="3f49ae04-57e2-4f7f-8696-5f30c0a08c37"></script>
+      </head>
       <body className={styles.bodyFont}>
         <PageHeader navItems={navItems} />
         <div className='page-wrap'>
