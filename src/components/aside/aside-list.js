@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { LOADING_ICON_BASE64 } from '@config'
 
@@ -23,7 +23,7 @@ const icon = (
   </svg>
 )
 
-export default function AsideList({ posts }) {
+function AsideList({ posts }) {
 
   const [loading, setLoading] = useState({})
   const selectedPath = usePathname()
@@ -44,7 +44,7 @@ export default function AsideList({ posts }) {
     marginLeft: '0.3em'
   }
 
-  function clickAction(realPath) {
+  const clickAction = (realPath) => {
     const newLoading = {}
     newLoading[realPath] = true
     setLoading(newLoading)
@@ -57,7 +57,7 @@ export default function AsideList({ posts }) {
         return (
           <li style={{ marginTop: index !== 0 ? 8 : 0 }} key={index}>
             {icon}
-            <Link onClick={() => clickAction(realPath)} prefetch={false} href="/posts/[cat]/[path]" as={realPath} className={styles.link}>
+            <Link onNavigate={() => clickAction(realPath)} href="/posts/[cat]/[path]" as={realPath} className={styles.link}>
               {item.title}
             </Link>
             <span style={loading[realPath] && selectedPath !== realPath ? loadingStyle : {}}></span>
@@ -67,3 +67,5 @@ export default function AsideList({ posts }) {
     </ul>
   )
 }
+
+export default memo(AsideList)

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import { load } from 'jinrishici'
 
 import { LOADING_ICON_BASE64 } from '@config'
@@ -19,29 +19,47 @@ const loadingStyle = {
   width: '1em'
 }
 
-export default React.memo(function Motto({ speed }) {
+function Motto({ speed }) {
 
   // 格言诗句的内容
   const [motto, setMotto] = useState('')
 
   // 防抖参数
   let shake
-  const laodMotto = () => {
-    if (shake) {
-      clearTimeout(shake)
+  const laodMotto = () => new Promise((resolve, reject) => {
+    try {
+      if (shake) {
+        clearTimeout(shake)
+      }
+      shake = setTimeout(() => {
+        setMotto('')
+        load(result => {
+          setMotto(result.data.content)
+          resolve(result.data.content)
+        })
+      }, 50)
+    } catch (error) {
+      reject(error)
     }
-    shake = setTimeout(() => {
-      setMotto('')
-      load(result => {
-        setMotto(result.data.content)
-      })
-    }, 50)
-  }
+  })
 
-  useEffect(laodMotto, [])
+  useEffect(() => {
+    async function fetchMotto() {
+      await laodMotto()
+    }
+    fetchMotto()
+  }, [])
 
-  return <div onClick={laodMotto} className={styles.motto + ' ' + styles.anim} style={{ animationDuration: speed + 's' }}>
-    <h2 style={{ position: 'relative' }}>每日诗词<span style={motto ? {} : loadingStyle}></span></h2>
+  const animStyle = useMemo(() => ({
+    animationDuration: speed + 's'
+  }), [speed])
+
+  const loadingPositionStyle = useMemo(() => motto ? {} : loadingStyle, [motto])
+
+  return <div onClick={laodMotto} className={styles.motto + ' ' + styles.anim} style={animStyle}>
+    <h2 style={{ position: 'relative' }}>每日诗词<span style={loadingPositionStyle}></span></h2>
     <p>{motto}</p>
   </div>
-})
+}
+
+export default memo(Motto)

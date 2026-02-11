@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useMemo, useState } from 'react'
 
 import AsideList from './aside-list'
 
@@ -13,7 +13,7 @@ const fixedStyle = {
   width: '300px'
 }
 
-export default React.memo(function FloatPanel({ latestPosts, speed }) {
+function FloatPanel({ latestPosts, speed }) {
   // 是否进入固定侧边栏状态
   const [sideStyle, setSideStyle] = useState({})
   const [showTips, setShowTips] = useState(false)
@@ -34,17 +34,32 @@ export default React.memo(function FloatPanel({ latestPosts, speed }) {
 
   useEffect(() => {
     setSideStyle(window.scrollY >= 223 ? fixedStyle : {})
-    window.addEventListener('scroll', scrollAction)
+    const opt = { passive: true }
+    window.addEventListener('scroll', scrollAction, opt)
     return () => {
-      window.removeEventListener('scroll', scrollAction)
+      window.removeEventListener('scroll', scrollAction, opt)
     }
   }, [])
 
+  const animStyle = useMemo(() => ({
+    animationDuration: (speed + 0.2) + 's'
+  }), [speed])
+
+  const arrawStyle = useMemo(() => ({
+    display: showTips ? 'block' : 'none'
+  }), [showTips])
+
+  const goTop = useCallback(() => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })
+  }, [])
+
   return <div style={sideStyle}>
-    <div className={styles.asidePanel + ' ' + styles.anim} style={{ animationDuration: (speed + 0.2) + 's' }}>
+    <div className={styles.asidePanel + ' ' + styles.anim} style={animStyle}>
       <h2>最新发表</h2>
       <AsideList posts={latestPosts} />
     </div>
-    <a style={{ display: showTips ? 'block' : 'none' }} className={styles.backtopBox} onClick={() => window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })}></a>
+    <a style={arrawStyle} className={styles.backtopBox} onClick={goTop}></a>
   </div>
-})
+}
+
+export default memo(FloatPanel)

@@ -1,0 +1,85 @@
+@use '../../styles/colors';
+@use '../../styles/commons';
+
+.splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: colors.$bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: commons.$top-layer;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+
+  &.fading {
+    opacity: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.splashTitle {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: colors.$head-text-color;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.splashSubtitle {
+  font-size: 0.9rem;
+  color: colors.$fade-text-color;
+  letter-spacing: 0.05em;
+}
+
+/* 多元素动画容器 */
+.splashAnimation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+/* 中心旋转元素 */
+.loaderCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+
+.loaderCenter circle {
+  stroke: colors.$fg-color;
+  stroke-width: 4;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 0;
+  animation: dash 2.5s ease-in-out infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 160;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100, 160;
+    stroke-dashoffset: -30;
+  }
+  100% {
+    stroke-dasharray: 1, 160;
+    stroke-dashoffset: -160;
+  }
+}
+

@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 
 import styles from './Aside.module.scss'
 
-export default function BackTop() {
+function BackTop() {
 
   const [show, setShow] = useState(false)
 
@@ -32,3 +32,5 @@ export default function BackTop() {
     <a style={{ display: show ? 'block' : 'none' }} className={styles.backtopBox} onClick={() => window.scrollTo({ left: 0, top: 0, behavior: 'smooth' })}></a>
   )
 }
+
+export default memo(BackTop)
