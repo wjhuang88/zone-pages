@@ -11,7 +11,7 @@ function PostListItem({ meta, sort }) {
 
   const [loading, setLoading] = useState(false)
 
-  const image = meta.img || 'https://images.pexels.com/photos/1684149/pexels-photo-1684149.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=150'
+  const image = meta.img || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIxNTAiIHk9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IndoaXRlIiBkeD0iMCB5PSI0MCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzI0NDkwMCI+UG9zdDwvdGV4dD48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQ9bWFya2V0eXBlci11c2VyU3R5bGUnKT48cmVjdCB4PSIzMDAiIHk9IjMwIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg=='
   const path = meta.id
   const cat = meta.parent
   const title = meta.title
