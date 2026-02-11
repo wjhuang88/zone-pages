@@ -1,8 +1,23 @@
-FROM node:17-alpine
+# Use official bun image
+FROM oven/bun:1-alpine
 
-WORKDIR /app/index_content
+# Set working directory
+WORKDIR /app
+
+# Copy dependency files first for better cache utilization
+COPY package.json bun.lockb ./
+
+# Install dependencies
+RUN bun install --frozen-lockfile
+
+# Copy application files
 COPY . .
 
+# Build application
+RUN bun run build
+
+# Expose port
 EXPOSE 3000
 
-ENTRYPOINT ["yarn", "start"]
+# Run production server
+ENTRYPOINT ["bun", "run", "start"]

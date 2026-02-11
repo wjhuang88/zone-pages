@@ -14,13 +14,13 @@ pipeline {
         stage('Install modules & Build') {
             agent {
                 docker {
-                    image 'node:14-alpine'
-                    args '-v $HOME/.npm:/root/.npm'
+                    image 'node:17-alpine'
                 }
             }
             steps {
-                sh 'yarn'
-                sh 'yarn build'
+                sh 'curl -fsSL https://bun.sh/install | bash'
+                sh 'export BUN_INSTALL="$HOME/.bun" && export PATH="$BUN_INSTALL/bin:$PATH" && bun install'
+                sh 'export BUN_INSTALL="$HOME/.bun" && export PATH="$BUN_INSTALL/bin:$PATH" && bun run build'
             }
         }
         stage('Pack docker image') {
